@@ -1,0 +1,229 @@
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    line-height:1.5;
+}
+
+html, body {
+    min-height: 100vh;
+    position: relative;
+}
+
+body {
+    font-size: 8px;
+}
+
+main {
+    padding-bottom: 64px;
+}
+
+h1 {
+    font-size: 72px;
+    line-height: 96px;
+}
+
+h2 {
+    font-size: 48px;
+    line-height: 72px;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 64px;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 48px;
+}
+
+h5 {
+    font-size: 21px;
+    line-height: 40px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 32px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p, label, input, textarea, li {
+    font-family: 'Open Sans', sans-serif;
+}
+
+label {
+    font-weight: 700;
+}
+
+label, input, textarea {
+    padding: .5rem 2%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+button {
+    border-radius: 20px;
+    padding: 0 2rem;
+    cursor: pointer;
+}
+
+.b {
+    font-weight: 700;
+}
+
+.box-shadow {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 5%;
+    padding-bottom: 2rem;
+    justify-content: center;
+    background-color: #c7c7c7;
+    max-width: 600px;
+    margin-bottom: 4rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.user-form-btns {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.user-form button, .user-form a {
+    font-size: 24px;
+    line-height: 48px;
+    font-weight: 700;
+}
+
+
+
+
+/*ANIMATIONS*/
+
+.js-scroll {
+    opacity: 0;
+    transition: opacity 500ms;
+}
+   
+.js-scroll.scrolled {
+    opacity: 1;
+}
+.scrolled.fade-in {
+    animation: fade-in 1s ease-in-out both;
+  }
+  
+.scrolled.fade-in-bottom {
+    animation: fade-in-bottom 1s ease-in-out both;
+}
+.scrolled.fade-in-bottom2 {
+    animation: fade-in-bottom2 1s ease-in-out both;
+}
+.scrolled.fade-in-bottom3 {
+    animation: fade-in-bottom3 1s ease-in-out both;
+}
+  
+  
+.scrolled.slide-left {
+    animation: slide-in-left 1s ease-in-out both;
+}
+  
+.scrolled.slide-right {
+    animation: slide-in-right 1s ease-in-out both;
+}
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-100px);
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
