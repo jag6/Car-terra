@@ -1,6 +1,6 @@
 :root:not(.light) {
-    --header-color: #174966;
     --background-color: #0c0c0d;
+    --header-color: #174966;
     --footer-color: #202233;
     --banner-form: #3B3B40;
     --component1-color: #38383D;
@@ -21,8 +21,8 @@
 }
   
 :root.light {
-    --header-color: #2779A7;
     --background-color: #f7f7f7;
+    --header-color: #2779A7;
     --footer-color: #282B40;
     --banner-form: #757580;
     --component1-color: #d7d7db;
@@ -48,15 +48,15 @@
     --secondary-font-color: rgba(226, 232, 240, 1);
 }
 
-header {
-    background-color: var(--header-color);
-}
-
 body {
     background-color: var(--background-color);
 }
 
-footer {
+header {
+    background-color: var(--header-color);
+}
+
+footer, .mobile-nav {
     background-color: var(--footer-color);
     color: #fff;
 }
@@ -68,21 +68,6 @@ main {
 main a {
     color: var(--font-color) !important;
 }
-
-@media (width > 576px) {
-    .banner-form {
-        background: rgb(0, 0, 0);
-        background: rgba(0, 0, 0, 0.5); 
-    }
-}
-
-@media (width <= 576px) {
-    .banner-form {
-        background-color: var(--banner-form);
-    }
-}
-
-
 
 .container-component-level1 {
     background-color: var(--component1-color);
@@ -140,15 +125,14 @@ input {
 }
 
 .theme-icon, .user-icon {
-    width: 2.5rem;
-    height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 2rem;
+    height: 2rem;
+    width: 2rem;
     color: #F2C31F;
-    background-color: var(--header-color);
+    background-color: transparent;
 }
 
 .article {
@@ -206,4 +190,18 @@ input {
     height: 1px;
     width: 1px;
     overflow: hidden;
+}
+
+
+@media (width <= 576px) {
+    .banner-form {
+        background-color: var(--banner-form);
+    }
+}
+
+@media (width > 576px) {
+    .banner-form {
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5); 
+    }
 }
