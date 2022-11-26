@@ -3,6 +3,71 @@
 
 {% block content %}
 
-<h1>HOME</h1>
+<section class="banner">
+    <div class="banner-img">
+        <section class="margin-bottom-2 bih text-align">
+            <section>
+                <h1>Find Your<br><span>DREAM CAR</span> Here</h1>
+            </section>
+            <div>
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+        </section>
+        <img src="{% static 'images/car-banner.jpg' %}" alt="car interior">
+    </div>
+    <section class="banner-form">
+        <section class="margin-bottom-2">
+            <h1>Find Your<br><span>DREAM CAR</span></h1>
+        </section>
+        <form action="" class="margin-bottom-2">
+            <div class="form-group-column">
+                <label for="keyword">KEYWORD</label>
+                <input type="text" name="keyword" id="keyword" placeholder="Keyword (Ford, Porsche, Sedan)">
+            </div>
+            <div class="form-group-column">
+                <label for="make_model">MAKE & MODEL</label>
+                <input type="text" name="make_model" id="make_model" placeholder="Make & Model">
+            </div>
+            <div class="form-group-column">
+                <label for="price_range">PRICE RANGE</label>
+                <select name="price_range" id="price_range">
+                    <option value="" disabled selected>Price Range</option>
+                    <option value="less-five-g">Less than $5000</option>
+                    <option value="less-ten-g">Less than $10000</option>
+                    <option value="less-fifteen-g">Less than $15000</option>
+                    <option value="less-twenty-g">Less than $20000</option>
+                    <option value="less-twenty-five-g">Less than $25000</option>
+                    <option value="less-thirty-five-g">Less than $35000</option>
+                    <option value="less-fify-g">Less than $50000</option>
+                    <option value="less-seventy-five-g">Less than $75000</option>
+                    <option value="more-seventy-five-g">More than $75000</option>
+                </select>
+            </div>
+            <div class="form-group-column">
+                <label for="state">STATE</label>
+                <select name="state" id="state">
+                    <option value="" disabled selected>State (All)</option>
+                    <option value="California">California</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Washington">Washington</option>
+                </select>
+            </div>
+            <div class="form-group-column">
+                <label for="city">CITY</label>
+                <input type="text" name="city" id="city" placeholder="City">
+            </div>
+            <div>
+                <button type="submit" class="green opacity-8">SEARCH</button>
+            </div>
+        </form>
+    </section>
+</section>
+<section class="latest-listings margin-top-3">
+    <section class="text-align margin-bottom-3">
+        <h2>Latest Listings</h2>
+    </section>
+</section>
 
 {% endblock %}

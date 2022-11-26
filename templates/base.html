@@ -3,8 +3,14 @@
 <html lang="en">
 <head>
     <!-- CSS + Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/color-switch.css' %}">
+    <link rel="stylesheet" href="{% static 'css/margin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header-nav-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <!-- Favicon -->
      
     <!-- Canonical URL -->
@@ -22,7 +28,7 @@
     <meta property="og:description" content="{% block meta_description %}Homepage{% endblock %}">
     <meta property="og:image" content="{% block meta_image %}{% endblock %}">
     <meta property="og:url" content="{% block meta_url %}{% endblock %}">
-    <meta property="og:site_name" content="Project">
+    <meta property="og:site_name" content="Car-terra">
     <!-- Metadata Other -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,12 +37,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>{% block title %}Home - Project{% endblock title %}</title>
+    <title>{% block title %}Home{% endblock title %} - Car-terra</title>
     <!--Scripts -->
-    <script src="{% static 'js/animate.js' %}"></script>
+    <script src="{% static 'js/animate.js' %}" defer></script>
+    <script src="{% static 'js/color-switch.js' %}" defer></script>
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <header>
+        <div class="header-inner">
+            <a href="{% url 'index' %}">
+                <div class="logo">
+                    <img src="{% static 'images/car-logo.svg' %}" alt="logo">
+                    <p>Car-terra</p>         
+                </div>
+            </a>
+            <nav id="nav" class="nav">
+                {% include 'components/nav.html' %}
+            </nav>
+            <div class="user-links" id="user-links">
+                <ul>
+                    <li>
+                        <i class="fa fa-user"></i>
+                        <a class="anchor" href="/login">LOGIN</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-sign-in"></i>
+                        <a class="anchor" href="/register">REGISTER</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-contact-links">
+                <a href=""><i class="fa-solid fa-phone"></i></a>
+                <a href=""><i class="fa-solid fa-envelope"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div>
+                <button type="button" class="theme-icon">
+                    <i
+                      aria-hidden="true"
+                      class="fa-solid fa-moon"
+                      title="Toggle between dark and light mode"
+                    ></i>
+                    <i
+                      aria-hidden="true"
+                      class="fa-regular fa-sun"
+                      title="Toggle between dark and light mode"
+                    ></i>
+                    <span class="sr-only">Toggle between dark and light mode</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% include 'components/footer.html' %}
 </body>
 </html>

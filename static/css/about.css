@@ -1,0 +1,14 @@
+.bia {
+    position: absolute;
+    top: 240px;
+    left: 0;
+    right: 0;
+    color: #f3f3f3;
+    text-align: center;
+}
+
+@media (width <= 576px) {
+    .bia {
+        top: 176px;
+    }
+}

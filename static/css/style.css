@@ -10,7 +10,7 @@ abbr, address, cite, code,
 del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var,
 b, i,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd, ol, ul, li, select, option,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
@@ -41,6 +41,17 @@ body {
 
 main {
     padding-bottom: 64px;
+}
+
+@media only screen and (min-width: 1441px) {
+    main {
+        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+        position: relative;
+    }
 }
 
 h1 {
@@ -77,7 +88,7 @@ h1, h2, h3, h4, h5 {
     font-family: 'Ubuntu', sans-serif;
 }
 
-p, label, input, textarea, li {
+p, label, input, textarea, li, select, option {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -85,22 +96,26 @@ label {
     font-weight: 700;
 }
 
-label, input, textarea {
-    padding: .5rem 2%;
-    border-radius: 10px;
+label, input, textarea, select, option {
+    padding: .5rem 5%;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 5px;
     margin-bottom: 1rem;
-    background-color: #fff;
+    background-color: #f3f3f3;
     cursor: pointer;
 }
 
 button {
-    border-radius: 20px;
-    padding: 0 2rem;
     cursor: pointer;
 }
 
 .b {
     font-weight: 700;
+}
+
+.text-align {
+    text-align: center;
 }
 
 .box-shadow {
@@ -112,6 +127,30 @@ button {
     0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
+.opacity-8:hover {
+    opacity: .8;
+}
+
+
+/*HOME*/
+
+.banner-img {
+    height: 672px;
+}
+
+.banner-img img {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 672px;
+    max-width: 1440px;
+}
+
+
+
+/*FORMS*/
 
 .user-form {
     display: flex;
@@ -127,12 +166,7 @@ button {
     border-bottom-right-radius: 20px;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-}
+
 
 .user-form-btns {
     display: flex;
@@ -149,21 +183,18 @@ button {
 
 
 
-
 /*ANIMATIONS*/
 
 .js-scroll {
     opacity: 0;
     transition: opacity 500ms;
-}
-   
+}  
 .js-scroll.scrolled {
     opacity: 1;
 }
 .scrolled.fade-in {
     animation: fade-in 1s ease-in-out both;
-  }
-  
+}
 .scrolled.fade-in-bottom {
     animation: fade-in-bottom 1s ease-in-out both;
 }
@@ -173,12 +204,9 @@ button {
 .scrolled.fade-in-bottom3 {
     animation: fade-in-bottom3 1s ease-in-out both;
 }
-  
-  
 .scrolled.slide-left {
     animation: slide-in-left 1s ease-in-out both;
-}
-  
+} 
 .scrolled.slide-right {
     animation: slide-in-right 1s ease-in-out both;
 }
