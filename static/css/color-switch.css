@@ -48,6 +48,8 @@
     --secondary-font-color: rgba(226, 232, 240, 1);
 }
 
+/*BASE*/
+
 body {
     background-color: var(--background-color);
 }
@@ -69,92 +71,27 @@ main a {
     color: var(--font-color) !important;
 }
 
-.container-component-level1 {
+
+/*LISTINGS*/
+
+.listing {
     background-color: var(--component1-color);
     box-shadow: var(--box-shadow);
 }
 
-.container-component-level2 {
-    background-color: var(--component2-color);
-    box-shadow: var(--box-shadow);
-}
-
-.category-container {
-    background-color: var(--component3-color);
-    box-shadow: var(--box-shadow);
-}
-
-input {
-    background-color: var(--input-color);
-}
-
-.user-form {
-    background-color: var();
-}
-
-.user-form button {
-    background-color: var();
-}
-
-.user-form div a:hover {
-    background-color: var();
-}
-
-.blue {
-    background-color: var(--blue);
-}
-
-.green {
+.listing div button, .banner-form button {
     background-color: var(--green);
 }
 
-.red {
-    background-color: var(--red);
-}
-
-.yellow {
-    background-color: var(--yellow);
-}
-
-.purple {
-    background-color: var(--purple);
-}
-
-.icon-bar ul li a {
-    border: var(--border);
-}
-
-.theme-icon, .user-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    height: 2rem;
-    width: 2rem;
-    color: #F2C31F;
-    background-color: transparent;
-}
+/*BLOG*/
 
 .article {
     background-color: var(--component1-color);
 }
 
 .comment {
-    background-color: var(--text-area);
-    color: var(--font-color);
-}
-
-
-.form-btns button {
-    background-color: var(--green);
-}
-
-.form-btns a:hover {
-    border-bottom: 4px solid var(--font-color);
-}
-
-.comment {
     background-color: var(--comment);
+    color: var(--font-color);
 }
 
 .success {
@@ -165,8 +102,25 @@ input {
     color: var(--red);
 }
 
+
+/*SEARCH*/
+
 .search-container button {
     background: var(--search);
+}
+
+
+/*ROOT*/
+
+.theme-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    color: #F2C31F;
+    background-color: transparent;
 }
   
 :root:not(.light) .theme-icon .fa-sun {
@@ -185,12 +139,7 @@ input {
 :root.dark .theme-icon .fa-moon {
     display: inline-block;
 }
-  
-.sr-only {
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-}
+
 
 
 @media (width <= 576px) {

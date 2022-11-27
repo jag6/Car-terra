@@ -114,7 +114,7 @@ header i {
     width: 0%;
     z-index: 1200;
     position: fixed;
-    transition: all .6s;
+    transition: width .6s;
     overflow-y: auto;
 }
 
@@ -125,11 +125,10 @@ header i {
 
 .mobile-nav ul li a {
     font-size: 24px;
-    line-height: 60px;
+    line-height: 64px;
 }
 
-
-@media (width <= 1024px) {
+@media (width <= 1099px) {
     .logo p {
         font-size: 32px;
         line-height: 56px;
@@ -138,15 +137,6 @@ header i {
     .logo img {
         height: 32px;
         width: auto;
-    }
-
-    .nav, .user-links, .header-contact-links {
-        display: none;
-    }
-
-    .color-toggle {
-        position: absolute;
-        right: 70px;
     }
 
     .color-toggle i {
@@ -169,8 +159,43 @@ header i {
         display: flex;
         flex-direction: column;
     }
+}
+
+@media (width <= 1099px) and (orientation: landscape) {
+    .nav, .user-links, .mobile-nav .header-contact-links {
+        display: none;
+    }
+
+    .mobile-nav {
+        padding-top: 1rem;
+    }
+
+    .mobile-nav ul li a {
+        font-size: 18px;
+        line-height: 48px;
+    }
+
+    .header-contact-links {
+        position: absolute;
+        right: 200px;
+    }
+
+    .color-toggle {
+        position: absolute;
+        right: 120px;
+    }
 } 
 
+@media (width <= 1099px) and (orientation: portrait) {
+    .nav, .user-links, .header-contact-links {
+        display: none;
+    }
+
+    .color-toggle {
+        position: absolute;
+        right: 80px;
+    }
+} 
 
 
 /*FOOTER*/
@@ -197,4 +222,3 @@ footer {
     font-size: 24px;
     line-height: 48px;
 }
-

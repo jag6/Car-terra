@@ -33,10 +33,6 @@
     visibility: hidden;
 }
 
-#select {
-    color: gray;
-}
-
 .form-group-column {
     display: flex;
     flex-direction: column;
