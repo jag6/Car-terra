@@ -17,6 +17,8 @@
 
 {% block title %}Listings{% endblock %}
 
+{% block other_js %}<script src="{% static 'js/listings-pag.js' %}" defer></script>{% endblock %}
+
 {% block content %}
 
 <section class="banner">
@@ -29,8 +31,8 @@
     <section class="text-align margin-top-4 margin-bottom-4">
         <h2>All Listings</h2>
     </section>
-    <section class="listings-total">
-        <section class="listing">
+    <section id="listings-total" class="listings-total">
+        <section class="listing" aria-live="polite">
             <section class="listing-top">
                 <div>
                     <img src="" alt="">
@@ -69,7 +71,7 @@
                 <button class="opacity-8" type="button">MORE INFO</button>
             </div>
         </section>
-        <section class="listing">
+        <section class="listing" aria-live="polite">
             <section class="listing-top">
                 <div>
                     <img src="" alt="">
@@ -108,7 +110,7 @@
                 <button class="opacity-8" type="button">MORE INFO</button>
             </div>
         </section>
-        <section class="listing">
+        <section class="listing" aria-live="polite">
             <section class="listing-top">
                 <div>
                     <img src="" alt="">
@@ -147,7 +149,7 @@
                 <button class="opacity-8" type="button">MORE INFO</button>
             </div>
         </section>
-        <section class="listing">
+        <section class="listing" aria-live="polite">
             <section class="listing-top">
                 <div>
                     <img src="" alt="">
@@ -186,7 +188,7 @@
                 <button class="opacity-8" type="button">MORE INFO</button>
             </div>
         </section>
-        <section class="listing">
+        <section class="listing" aria-live="polite">
             <section class="listing-top">
                 <div>
                     <img src="" alt="">
@@ -225,7 +227,7 @@
                 <button class="opacity-8" type="button">MORE INFO</button>
             </div>
         </section>
-        <section class="listing">
+        <section class="listing" aria-live="polite">
             <section class="listing-top">
                 <div>
                     <img src="" alt="">
@@ -264,7 +266,7 @@
                 <button class="opacity-8" type="button">MORE INFO</button>
             </div>
         </section>
-        <section class="listing">
+        <section class="listing li" aria-live="polite">
             <section class="listing-top">
                 <div>
                     <img src="" alt="">
@@ -305,5 +307,10 @@
         </section>
     </section>
 </section>
+<nav id="nav-listings" class="nav-listings">
+    <button id="prev-btn" class="pag-btn" aria-label="Previous page">&lt;</button>
+    <div id="pag-nums" class="pag-nums"></div>
+    <button id="next-btn" class="pag-btn" aria-label="Next page">&gt;</button>
+</nav>
 
 {% endblock %}

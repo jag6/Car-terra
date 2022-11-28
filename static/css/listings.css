@@ -3,7 +3,7 @@
 }
 
 .listings-container {
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
     padding: 0 5%;
 }
 
@@ -62,6 +62,29 @@
     font-weight: 700;
     width: 100%;
 }
+
+.nav-listings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6rem;
+}
+
+.pag-num, .pag-btn {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 1rem;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
 
 @media (width <= 576px) {
     .bil {

@@ -52,7 +52,7 @@ header ul li a {
     font-family: 'Ubuntu', sans-serif;
 }
 
-header ul li a:hover, .active {
+header ul li a:hover {
     border-bottom: 4px solid #fff;
     transition: .4s ease-in-out;
 }
