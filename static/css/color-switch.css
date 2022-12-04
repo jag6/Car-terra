@@ -51,6 +51,28 @@
     --secondary-font-color: rgba(226, 232, 240, 1);
 }
 
+/*ADMIN*/
+#header {
+    background-color: var(--header-color);
+}
+
+#header h1, .breadcrumbs a, #content-main caption, #nav-sidebar a, .submit-row input, #container a {
+    color: var(--font-color) !important;
+}
+
+.breadcrumbs, #content-main caption, .submit-row .default {
+    background-color: var(--green) !important;
+}
+
+.breadcrumbs a:hover, .submit-row input:hover, #nav-sidebar a:hover, #container a:hover {
+    opacity: .5;
+}
+
+.submit-row input {
+    background-color: var(--blue) !important;
+}
+
+
 /*BASE*/
 
 body {

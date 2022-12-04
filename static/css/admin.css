@@ -1,0 +1,24 @@
+.admin-logo img {
+    height: 32px;
+    width: 32px;
+}
+
+#header h1 {
+    font-weight: 700 !important;
+}
+
+#container h1, h2, h3, h4, h5, #user-tools a, #user-tools button, .breadcrumbs a {
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+#user-tools a, #user-tools button, .breadcrumbs a {
+    font-size: 12px;
+}
+
+#container label, #container a, #container span, .submit-row {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.breadcrumbs a , #content-main caption, .submit-row input {
+    font-weight: 700 !important;
+}

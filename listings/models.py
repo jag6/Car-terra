@@ -14,6 +14,7 @@ class Listing(models.Model):
     make = models.CharField(max_length=20, null=True)
     model = models.CharField(max_length=20, null=True)
     year = models.IntegerField(null=True)
+    color = models.CharField(max_length=20, null=True)
     condition = models.CharField(max_length=20, null=True)
     price = models.IntegerField(null=True)
     photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/', null=True)
