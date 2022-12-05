@@ -10,9 +10,8 @@
     top: 240px;
 }
 
-.employee-container {
+.employee-container, .mvp-section {
     padding: 0 5%;
-    max-width: 1440px;
 }
 
 .employee {
@@ -35,6 +34,25 @@
     margin-bottom: 1rem;
 }
 
+.employee-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-contact a, .employee-contact i {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.employee-contact i {
+    margin-right: 1rem;
+}
+
+.employee-contact a {
+    margin: .5rem 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .employee-info, .employee-img {
     display: flex;
     flex-direction: column;
@@ -50,6 +68,39 @@
     max-width: 600px;
     height: auto;
 }
+
+.mvp-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.mvp {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    max-height: auto;
+    margin: 0 5% 4rem 5%;
+}
+
+.mvp-img {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.mvp-img img {
+    width: 120px;
+    border-radius: 50%;
+    height: auto;
+}
+
+.mvp h3 {
+    font-size: 24px;
+    line-height: 48px;
+}
+
 
 @media (width <= 991px) {
     .employee {

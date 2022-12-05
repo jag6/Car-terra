@@ -13,6 +13,7 @@ MODEL/DB FIELDS
     make: STR
     model: STR
     year: INT
+    color: STR
     condition: STR
     price: INT
     is_published: BOOL [true]

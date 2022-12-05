@@ -69,7 +69,8 @@ header i {
 }
 
 .header-contact-links i:hover {
-    opacity: .8;
+    opacity: .5;
+    transition: .1s;
 }
 
 

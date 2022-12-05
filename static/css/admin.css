@@ -15,7 +15,7 @@
     font-size: 12px;
 }
 
-#container label, #container a, #container span, .submit-row {
+#container label, #container a, #container p, #container span, .submit-row {
     font-family: 'Open Sans', sans-serif !important;
 }
 

@@ -1,24 +1,93 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load humanize %}
 
 {% block canonical %}{% endblock %}
 
 {% block description %}Listing page{% endblock %}
 
-{% block twitter_title %}Listing{% endblock %}
+{% block twitter_title %}{{ listing.title }}{% endblock %}
 {% block twitter_description %}Listing page{% endblock %}
 {% block twitter_image %}{% endblock %}
 
 {% block meta_title %}Listing{% endblock %}
 {% block meta_description %}Listing page{% endblock %}
-{% block meta_image %}{% endblock %}
+{% block meta_image %}{{ listing.photo_main.url }}{% endblock %}
 {% block meta_url %}{% endblock %}
 
-{% block title %}Listing{% endblock %}
+{% block title %}{{ listing.title }}{% endblock %}
+
+{% block other_js %}<script src="{% static 'js/close-btn.js' %}" defer></script>{% endblock %}
 
 {% block content %}
 
-<h1>Listing_id</h1>
+<div id="close-btn" class="back-to-listings margin-top-2">
+    <button type="" aria-label="Close">&lt; BACK TO LISTINGS</button>
+</div>
+<section class="margin-top-4 margin-bottom-4">
+    <h1 class="text-align" >{{ listing.title }}</h1>
+</section>
+<section class="listing-container">
+    <section class="listing" aria-live="polite">
+        <section class="listing-top">
+            <div>
+                <img src="{{ listing.photo_main.url }}" alt="{{ listing.title }}">
+            </div>
+            <section>
+                <h3>{{ listing.title }}</h3>
+            </section>
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <p>{{ listing.address }}<br>{{ listing.city }}, {{ listing.state }} {{ listing.zipcode }}</p>
+            </div>
+        </section>
+        <section class="listing-middle">
+            <div class="listing-description">
+                <i class="fa-solid fa-file-lines"></i>
+                <p>{{ listing.description }}</p>
+            </div>
+            <div class="listing-price">
+                <i class="fa-solid fa-droplet"></i>
+                <p>Color: </p>
+                <p>{{ listing.color }}</p>
+            </div>
+            <div class="listing-condition">
+                <i class="fa-solid fa-bolt"></i>
+                <p>Condition: </p>
+                <p>{{ listing.condition }}</p>
+            </div>
+            <div class="listing-price">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <p>Price: </p>
+                <p>${{ listing.price | intcomma }}</p>
+            </div>
+        </section>
+        <section class="listing-contact">
+            <div class="listing-date">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p>List Date: </p>
+                <p>{{ listing.list_date | timesince }}</p>
+            </div>
+        </section>
+    </section>
+    <section class="make-inquiry">
+        <section class="inquiry-contact-header margin-bottom-2">
+            <i class="fa-solid fa-address-card"></i>
+            <h2>Contact</h2>
+        </section>
+        <section class="inquiry-contact margin-bottom-2">
+            <div class="margin-right-1">
+                <img src="{{ listing.employee.photo.url }}" alt="">
+            </div>
+            <section>
+                <h3>{{ listing.employee }}</h3>
+            </section>
+        </section>
+        <div class="opacity-5">
+            <button type="submit">Make an Inquiry</button>
+        </div>
+    </section>
+</section>
 
 {% endblock %}

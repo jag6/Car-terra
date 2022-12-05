@@ -4,7 +4,7 @@ const listings = pagList.querySelectorAll('.listing');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
-const pagLimit = 3;
+const pagLimit = 6;
 const pagCount = Math.ceil(listings.length/pagLimit);
 let currentPag = 1;
 
@@ -82,13 +82,19 @@ window.addEventListener('load', () => {
 
     prevBtn.addEventListener('click', () => {
         setCurrentPag(currentPag - 1);
+        window.location.href = '#all-listings';
     });
 
     nextBtn.addEventListener('click', () => {
         setCurrentPag(currentPag + 1);
+        window.location.href = '#all-listings';
     });
 
     document.querySelectorAll('.pag-num').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            window.location.href = '#all-listings';
+        });
+
         const pagIndex = Number(btn.getAttribute('pag-index'));
 
         if(pagIndex) {

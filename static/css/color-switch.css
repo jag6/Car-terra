@@ -16,7 +16,7 @@
     --blue: #20658C;
     --green: #1C9984;
     --red:  ;
-    --yellow: ;
+    --yellow: #F2C31F;
     --purple: ;
     --border: 4px solid #0c0c0d;
     --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -29,7 +29,7 @@
     --banner-form: #757580;
     --pagNum: #d7d7db;
     --component1-color: #d7d7db;
-    --component2-color: #F0F0F5;
+    --component2-color: #e7e7e9;
     --component3-color: #d7d7db;
     --input-color: #f3f3f3;
     --font-color: #000;
@@ -40,7 +40,7 @@
     --blue: #38AEF2;
     --green: #20B399;
     --red:  ;
-    --yellow: ;
+    --yellow: #FFCF21;
     --purple: ;
     --box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -101,10 +101,9 @@ main a {
 
 .listing {
     background-color: var(--component1-color);
-    box-shadow: var(--box-shadow);
 }
 
-.listing div button, .banner-form button {
+.listing-button a, .banner-form button {
     background-color: var(--green);
 }
 
@@ -125,9 +124,22 @@ main a {
 }
   
 .pag-num.active {
-    background: var(--blue);
+    background-color: var(--blue);
 }
 
+/*LISTING*/
+
+.back-to-listings button {
+    color: var(--font-color);
+}
+
+.make-inquiry {
+    background-color: var(--component2-color);
+}
+
+.make-inquiry button {
+    background-color: var(--green);
+}
 
 /*BLOG*/
 
