@@ -19,60 +19,62 @@
 
 {% block content %}
 
-<section class="banner">
-    <section class="bi bil">
-        <h1>MEET THE DREAM TEAM</h1>
+<main class="main">
+    <section class="banner">
+        <section class="bi bil">
+            <h1 class="fade-in-no-scroll">MEET THE DREAM TEAM</h1>
+        </section>
+        <div class="banner-img"><img src="{% static 'images/about-banner.jpg' %}" alt="sales team"></div>
     </section>
-    <div class="banner-img"><img src="{% static 'images/about-banner.jpg' %}" alt="sales team"></div>
-</section>
-<ul class="employee-container">
-    <section class="text-align margin-top-4 margin-bottom-4">
-        <h2>A Little About Us</h2>
-    </section>
-    {% if employees %}
-        {% for employee in employees %}
-            <li class="employee">
-                <section class="employee-info">
-                    <section class="employee-name">
-                        <h3>{{ employee.name }}</h3>
+    <ul class="employee-container">
+        <section class="text-align margin-top-4 margin-bottom-4">
+            <h2>A Little About Us</h2>
+        </section>
+        {% if employees %}
+            {% for employee in employees %}
+                <li class="employee">
+                    <section class="employee-info js-scroll fade-in">
+                        <section class="employee-name">
+                            <h3>{{ employee.name }}</h3>
+                        </section>
+                        <div>
+                            <p>{{ employee.description }}</p>
+                        </div>
+                        <div class="employee-contact">
+                            <a href=""><i class="fa-solid fa-phone"></i>{{ employee.phone }}</a>
+                            <a href=""><i class="fa-solid fa-envelope"></i>{{ employee.email }}</a>
+                        </div>
                     </section>
-                    <div>
-                        <p>{{ employee.description }}</p>
+                    <div class="employee-img">
+                        <img src="{{ employee.photo.url }}" alt="{{ employee.name }} employee photo">
                     </div>
-                    <div class="employee-contact">
-                        <a href=""><i class="fa-solid fa-phone"></i>{{ employee.phone }}</a>
-                        <a href=""><i class="fa-solid fa-envelope"></i>{{ employee.email }}</a>
-                    </div>
-                </section>
-                <div class="employee-img">
-                    <img src="{{ employee.photo.url }}" alt="{{ employee.name }} employee photo">
-                </div>
-            </li>
-        {% endfor %}
-    {% else %}
-        <div class="text-align">
-            <h2>No Employees Available</h2>
-        </div>
-    {% endif %}
-</section>
-<section class="mvp-section">
-    <section class="text-align margin-top-4 margin-bottom-4">
-        <h2>Employee of the Month</h2>
-    </section>
-    <ul class="mvp-container">
-        {% if mvp_employees %}
-            {% for mvp_employee in mvp_employees %}
-                <li class="mvp">
-                    <div class="mvp-img">
-                        <img src="{{ mvp_employee.photo.url }}" alt="{{ mvp_employee.name }} mvp photo">
-                    </div>
-                    <section>
-                        <h3>{{ mvp_employee.name }}</h3>
-                    </section>
                 </li>
             {% endfor %}
+        {% else %}
+            <div class="text-align">
+                <h2>No Employees Available</h2>
+            </div>
         {% endif %}
-    </ul>
-</section>
+    </section>
+    <section class="mvp-section">
+        <section class="text-align margin-top-4 margin-bottom-4">
+            <h2>Employee of the Month</h2>
+        </section>
+        <ul class="mvp-container">
+            {% if mvp_employees %}
+                {% for mvp_employee in mvp_employees %}
+                    <li class="mvp js-scroll fade-in-bottom">
+                        <div class="mvp-img">
+                            <img src="{{ mvp_employee.photo.url }}" alt="{{ mvp_employee.name }} mvp photo">
+                        </div>
+                        <section>
+                            <h3>{{ mvp_employee.name }}</h3>
+                        </section>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </section>
+</main>
 
 {% endblock %}

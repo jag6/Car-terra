@@ -133,11 +133,11 @@ main a {
     color: var(--font-color);
 }
 
-.make-inquiry {
+.make-inquiry, .inquiry-form {
     background-color: var(--component2-color);
 }
 
-.make-inquiry button {
+.make-inquiry-btn button {
     background-color: var(--green);
 }
 

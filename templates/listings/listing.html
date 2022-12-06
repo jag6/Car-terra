@@ -18,76 +18,152 @@
 
 {% block title %}{{ listing.title }}{% endblock %}
 
-{% block other_js %}<script src="{% static 'js/close-btn.js' %}" defer></script>{% endblock %}
+{% block other_js %}<script src="{% static 'js/close-and-modal.js' %}" defer></script>{% endblock %}
 
 {% block content %}
 
-<div id="close-btn" class="back-to-listings margin-top-2">
-    <button type="" aria-label="Close">&lt; BACK TO LISTINGS</button>
-</div>
-<section class="margin-top-4 margin-bottom-4">
-    <h1 class="text-align" >{{ listing.title }}</h1>
-</section>
-<section class="listing-container">
-    <section class="listing" aria-live="polite">
-        <section class="listing-top">
-            <div>
-                <img src="{{ listing.photo_main.url }}" alt="{{ listing.title }}">
-            </div>
-            <section>
-                <h3>{{ listing.title }}</h3>
+<main>
+    <div class="back-to-listings">
+        <button id="close-btn" type="button" aria-label="Close">&lt; BACK TO LISTINGS</button>
+    </div>
+    <section class="margin-top-4 margin-bottom-4">
+        <h1 class="text-align" >{{ listing.title }}</h1>
+    </section>
+    <section class="listing-container">
+        <section class="listing" aria-live="polite">
+            <section class="listing-top">
+                <div class="listing-photo-main">
+                    <img src="{{ listing.photo_main.url }}" alt="{{ listing.title }}">
+                </div>
+                <section class="listing-photos-other-container">
+                    <ul>
+                        {% if listing.photo_1 %}
+                            <li class="listing-photos-other">
+                                <img class="opacity-5" src="{{ listing.photo_1.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                        {% if listing.photo_2 %}
+                            <li class="listing-photos-other">
+                                <img class="opacity-5" src="{{ listing.photo_2.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                        {% if listing.photo_3 %}
+                            <li class="listing-photos-other">
+                                <img class="opacity-5" src="{{ listing.photo_3.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                        {% if listing.photo_4 %}
+                            <li class="listing-photos-other">
+                                <img class="opacity-5" src="{{ listing.photo_4.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                        {% if listing.photo_5 %}
+                            <li class="listing-photos-other">
+                                <img class="opacity-5" src="{{ listing.photo_5.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                    </ul>
+                </section>
+                <section id="listing-photos-modal" class="listing-photos-modal">
+                    <button id="close-modal" class="close-modal">&times;</button>
+                    <ul class="modal-content">
+                        {% if listing.photo_1 %}
+                            <li class="modal-slide">
+                                <img src="{{ listing.photo_1.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                        {% if listing.photo_2 %}
+                            <li class="modal-slide">
+                                <img src="{{ listing.photo_2.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                        {% if listing.photo_3 %}
+                            <li class="modal-slide">
+                                <img src="{{ listing.photo_3.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                        {% if listing.photo_4 %}
+                            <li class="modal-slide">
+                                <img src="{{ listing.photo_4.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                        {% if listing.photo_5 %}
+                            <li class="modal-slide">
+                                <img src="{{ listing.photo_5.url }}" alt="{{ listing.title }}">
+                            </li>
+                        {% endif %}
+                    </ul>
+                    <button id="prev-modal" class="prev-modal">&#10094;</button>
+                    <button id="next-modal" class="next-modal">&#10095;</button>
+                </section>
+                <section>
+                    <h3>{{ listing.title }}</h3>
+                </section>
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>{{ listing.address }}<br>{{ listing.city }}, {{ listing.state }} {{ listing.zipcode }}</p>
+                </div>
             </section>
-            <div>
-                <i class="fa-solid fa-location-dot"></i>
-                <p>{{ listing.address }}<br>{{ listing.city }}, {{ listing.state }} {{ listing.zipcode }}</p>
-            </div>
+            <section class="listing-middle">
+                <div class="listing-description">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <p>{{ listing.description }}</p>
+                </div>
+                <div class="listing-price">
+                    <i class="fa-solid fa-droplet"></i>
+                    <p>Color: </p>
+                    <p>{{ listing.color }}</p>
+                </div>
+                <div class="listing-condition">
+                    <i class="fa-solid fa-bolt"></i>
+                    <p>Condition: </p>
+                    <p>{{ listing.condition }}</p>
+                </div>
+                <div class="listing-price">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <p>Price: </p>
+                    <p>${{ listing.price | intcomma }}</p>
+                </div>
+            </section>
+            <section class="listing-contact">
+                <div class="listing-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <p>List Date: </p>
+                    <p>{{ listing.list_date | timesince }}</p>
+                </div>
+            </section>
         </section>
-        <section class="listing-middle">
-            <div class="listing-description">
-                <i class="fa-solid fa-file-lines"></i>
-                <p>{{ listing.description }}</p>
+        <section class="make-inquiry">
+            <section class="inquiry-contact-header margin-bottom-2">
+                <i class="fa-solid fa-address-card"></i>
+                <h2>Contact</h2>
+            </section>
+            <section class="inquiry-contact margin-bottom-2">
+                <div class="margin-right-1">
+                    <img src="{{ listing.employee.photo.url }}" alt="">
+                </div>
+                <section>
+                    <h3>{{ listing.employee }}</h3>
+                </section>
+            </section>
+            <div class="make-inquiry-btn opacity-5">
+                <button id="make-inquiry" type="submit">Make an Inquiry</button>
             </div>
-            <div class="listing-price">
-                <i class="fa-solid fa-droplet"></i>
-                <p>Color: </p>
-                <p>{{ listing.color }}</p>
-            </div>
-            <div class="listing-condition">
-                <i class="fa-solid fa-bolt"></i>
-                <p>Condition: </p>
-                <p>{{ listing.condition }}</p>
-            </div>
-            <div class="listing-price">
-                <i class="fa-solid fa-dollar-sign"></i>
-                <p>Price: </p>
-                <p>${{ listing.price | intcomma }}</p>
-            </div>
-        </section>
-        <section class="listing-contact">
-            <div class="listing-date">
-                <i class="fa-solid fa-calendar-days"></i>
-                <p>List Date: </p>
-                <p>{{ listing.list_date | timesince }}</p>
-            </div>
+            <section id="inquiry-modal" class="inquiry-modal">
+                <section class="inquiry-form">
+                    <button id="close-inquiry-modal" class="close-modal">&times;</button>
+                    <section>
+                        <h3 class="text-align">Inquiry</h3>
+                    </section>
+                    <form action="">
+                    <div class="make-inquiry-btn opacity-5">
+                        <button id="">SEND</button>
+                    </div>
+                </form>
+                </section>
+            </section>
         </section>
     </section>
-    <section class="make-inquiry">
-        <section class="inquiry-contact-header margin-bottom-2">
-            <i class="fa-solid fa-address-card"></i>
-            <h2>Contact</h2>
-        </section>
-        <section class="inquiry-contact margin-bottom-2">
-            <div class="margin-right-1">
-                <img src="{{ listing.employee.photo.url }}" alt="">
-            </div>
-            <section>
-                <h3>{{ listing.employee }}</h3>
-            </section>
-        </section>
-        <div class="opacity-5">
-            <button type="submit">Make an Inquiry</button>
-        </div>
-    </section>
-</section>
+</main>
 
 {% endblock %}

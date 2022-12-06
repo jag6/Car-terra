@@ -84,10 +84,8 @@
             </div>
         </div>
     </header>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    {% block content %}
+    {% endblock %}
     {% include 'components/footer.html' %}
 </body>
 </html>

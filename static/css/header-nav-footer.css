@@ -112,11 +112,22 @@ header i {
     padding: 2rem 0 0 5%;
     right: 0;
     height: 100%;
-    width: 0%;
     z-index: 1200;
     position: fixed;
     transition: width .6s;
     overflow-y: auto;
+    width: 0%;
+    animation-name: mobileNavSlide;
+    animation-duration: .7s;
+}
+
+@keyframes mobileNavSlide {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    } 
 }
 
 .mobile-nav ul {

@@ -3,8 +3,8 @@ const nav_overlay = document.getElementById('nav-overlay');
 const body = document.querySelector('body');
 
 const clickOff = () => {
-    mobile_nav.style.width = '0%';
     nav_overlay.style.display = 'none';
+    mobile_nav.style.width = '0%';
     body.style.overflow = 'auto';
 };
 

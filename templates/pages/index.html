@@ -5,120 +5,124 @@
 
 {% block content %}
 
-<section class="banner">
-    <div class="banner-img">
-        <section class="margin-bottom-2 bih text-align">
-            <section>
-                <h1>Find Your<br><span>DREAM CAR</span> Here</h1>
-            </section>
-            <div>
-                <i class="fa-solid fa-arrow-down"></i>
-            </div>
-        </section>
-        <img src="{% static 'images/car-banner.jpg' %}" alt="car interior">
-    </div>
-    <section class="banner-form">
-        <section class="margin-bottom-2">
-            <h1>Find Your<br><span>DREAM CAR</span></h1>
-        </section>
-        <form action="" class="margin-bottom-2">
-            <div class="form-group-column">
-                <label for="keyword">KEYWORD</label>
-                <input type="text" name="keyword" id="keyword" placeholder="Keyword (Ford, Porsche, Sedan)">
-            </div>
-            <div class="form-group-column">
-                <label for="make_model">MAKE & MODEL</label>
-                <input type="text" name="make_model" id="make_model" placeholder="Make & Model">
-            </div>
-            <div class="form-group-column">
-                <label for="price_range">PRICE RANGE</label>
-                <select name="price_range" id="price_range">
-                    <option value="" disabled selected>Price Range</option>
-                    <option value="less-five-g">Less than $5000</option>
-                    <option value="less-ten-g">Less than $10000</option>
-                    <option value="less-fifteen-g">Less than $15000</option>
-                    <option value="less-twenty-g">Less than $20000</option>
-                    <option value="less-twenty-five-g">Less than $25000</option>
-                    <option value="less-thirty-five-g">Less than $35000</option>
-                    <option value="less-fify-g">Less than $50000</option>
-                    <option value="less-seventy-five-g">Less than $75000</option>
-                    <option value="more-seventy-five-g">More than $75000</option>
-                </select>
-            </div>
-            <div class="form-group-column">
-                <label for="state">STATE</label>
-                <select name="state" id="state">
-                    <option value="" disabled selected>State (All)</option>
-                    <option value="California">California</option>
-                    <option value="Idaho">Idaho</option>
-                    <option value="Nevada">Nevada</option>
-                    <option value="Oregon">Oregon</option>
-                    <option value="Washington">Washington</option>
-                </select>
-            </div>
-            <div class="form-group-column">
-                <label for="city">CITY</label>
-                <input type="text" name="city" id="city" placeholder="City">
-            </div>
-            <div>
-                <button type="submit" class="green opacity-8">SEARCH</button>
-            </div>
-        </form>
-    </section>
-</section>
-<section class="listings-container">
-    <section id="all-listings" class="text-align margin-top-3 margin-bottom-3">
-        <h2>Latest Listings</h2>
-    </section>
-    <ul id="listings-total" class="listings-total">
-        {% if listings %}
-            {% for listing in listings %}
-            <li class="listing" aria-live="polite">
-                <section class="listing-top">
-                    <div>
-                        <img src="{{ listing.photo_main.url }}" alt="{{ listing.title }}">
-                    </div>
-                    <section>
-                        <h3>{{ listing.title }}</h3>
-                    </section>
-                    <div>
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>{{ listing.address }}<br>{{ listing.city }}, {{ listing.state }} {{ listing.zipcode }}</p>
-                    </div>
+<main class="main">
+    <section class="banner">
+        <div class="banner-img">
+            <section class="margin-bottom-2 bih text-align">
+                <section>
+                    <h1>Find Your<br><span class="fade-in-longer">DREAM </span><span>CAR </span>Here</h1>
                 </section>
-                <section class="listing-middle">
-                    <div class="listing-price">
-                        <i class="fa-solid fa-dollar-sign"></i>
-                        <p>Price: </p>
-                        <p>${{ listing.price | intcomma }}</p>
-                    </div>
-                    <div class="listing-condition">
-                        <i class="fa-solid fa-bolt"></i>
-                        <p>Condition: </p>
-                        <p>{{ listing.condition }}</p>
-                    </div>
-                </section>
-                <section class="listing-contact">
-                    <div class="listing-employee">
-                        <i class="fa fa-user"></i>
-                        <p>{{ listing.employee }}</p>
-                    </div>
-                    <div class="listing-date">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <p>{{ listing.list_date | timesince }}</p>
-                    </div>
-                </section>
-                <div class="listing-button text-align">
-                    <a href="{% url 'listing' listing.id %}" class="opacity-5">MORE INFO</a>
+                <div>
+                    <i class="fa-solid fa-arrow-down"></i>
                 </div>
-            </li>
-            {% endfor %}
-        {% else %}
-            <div class="text-align">
-                <h2>No Listings Available</h2>
-            </div>
-        {% endif %}
-    </ul>
-</section>
+            </section>
+            <img src="{% static 'images/car-banner.jpg' %}" alt="car interior">
+        </div>
+        <section class="banner-form">
+            <section class="margin-bottom-2">
+                <h1>Find Your<br><span class="fade-in-longer">DREAM </span><span>CAR</span></h1>
+            </section>
+            <form action="" class="margin-bottom-2">
+                <div class="form-group-column">
+                    <label for="keyword">KEYWORD</label>
+                    <input type="text" name="keyword" id="keyword" placeholder="Keyword (Ford, Porsche, Sedan)">
+                </div>
+                <div class="form-group-column">
+                    <label for="make_model">MAKE & MODEL</label>
+                    <input type="text" name="make_model" id="make_model" placeholder="Make & Model">
+                </div>
+                <div class="form-group-column">
+                    <label for="price_range">PRICE RANGE</label>
+                    <select name="price_range" id="price_range">
+                        <option value="" disabled selected>Price Range</option>
+                        <option value="less-five-g">Less than $5000</option>
+                        <option value="less-ten-g">Less than $10000</option>
+                        <option value="less-fifteen-g">Less than $15000</option>
+                        <option value="less-twenty-g">Less than $20000</option>
+                        <option value="less-twenty-five-g">Less than $25000</option>
+                        <option value="less-thirty-five-g">Less than $35000</option>
+                        <option value="less-fify-g">Less than $50000</option>
+                        <option value="less-seventy-five-g">Less than $75000</option>
+                        <option value="more-seventy-five-g">More than $75000</option>
+                    </select>
+                </div>
+                <div class="form-group-column">
+                    <label for="state">STATE</label>
+                    <select name="state" id="state">
+                        <option value="" disabled selected>State (All)</option>
+                            {% if search_listings %}
+                                {% for search_listing in search_listings %}
+                                    <option value="{{ search_listing.state }}">{{ search_listing.state }}</option>
+                                {% endfor %}
+                            {% else %}
+                                <option value="No States Available">No States Available</option>
+                            {% endif %}
+                    </select>
+                </div>
+                <div class="form-group-column">
+                    <label for="city">CITY</label>
+                    <input type="text" name="city" id="city" placeholder="City">
+                </div>
+                <div>
+                    <button type="submit" class="green opacity-8">SEARCH</button>
+                </div>
+            </form>
+        </section>
+    </section>
+    <section class="listings-container">
+        <section id="all-listings" class="text-align margin-top-3 margin-bottom-3">
+            <h2 >Latest Listings</h2>
+        </section>
+        <ul id="listings-total" class="listings-total">
+            {% if newest_listings %}
+                {% for newest_listing in newest_listings %}
+                <li class=" listing js-scroll fade-in-bottom" aria-live="polite">
+                    <section class="listing-top">
+                        <div>
+                            <img src="{{ newest_listing.photo_main.url }}" alt="{{ newest_listing.title }}">
+                        </div>
+                        <section>
+                            <h3>{{ newest_listing.title }}</h3>
+                        </section>
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>{{ newest_listing.address }}<br>{{ newest_listing.city }}, {{ newest_listing.state }} {{ newest_listing.zipcode }}</p>
+                        </div>
+                    </section>
+                    <section class="listing-middle">
+                        <div class="listing-price">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <p>Price: </p>
+                            <p>${{ newest_listing.price | intcomma }}</p>
+                        </div>
+                        <div class="listing-condition">
+                            <i class="fa-solid fa-bolt"></i>
+                            <p>Condition: </p>
+                            <p>{{ newest_listing.condition }}</p>
+                        </div>
+                    </section>
+                    <section class="listing-contact">
+                        <div class="listing-employee">
+                            <i class="fa fa-user"></i>
+                            <p>{{ newest_listing.employee }}</p>
+                        </div>
+                        <div class="listing-date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>{{ newest_listing.list_date | timesince }}</p>
+                        </div>
+                    </section>
+                    <div class="listing-button text-align">
+                        <a href="{% url 'listing' newest_listing.id %}" target="_blank" class="opacity-5">MORE INFO</a>
+                    </div>
+                </li>
+                {% endfor %}
+            {% else %}
+                <div class="text-align">
+                    <h2>No Listings Available</h2>
+                </div>
+            {% endif %}
+        </ul>
+    </section>
+</main>
 
 {% endblock %}
