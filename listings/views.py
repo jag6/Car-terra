@@ -10,8 +10,12 @@ def index(request):
     
 def listing(request, listing_id):
     listing = get_object_or_404(Listing, pk = listing_id)
+    similar_listings = Listing.objects.filter(is_published = True)
     
-    context = { 'listing': listing }
+    context = { 
+                'listing': listing,
+                'similar_listings': similar_listings
+               }
     
     return render(request, 'listings/listing.html', context)
     

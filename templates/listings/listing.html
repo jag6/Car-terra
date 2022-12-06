@@ -5,20 +5,20 @@
 
 {% block canonical %}{% endblock %}
 
-{% block description %}Listing page{% endblock %}
+{% block description %}{{ listing.description }}{% endblock %}
 
 {% block twitter_title %}{{ listing.title }}{% endblock %}
-{% block twitter_description %}Listing page{% endblock %}
+{% block twitter_description %}Listing{% endblock %}
 {% block twitter_image %}{% endblock %}
 
-{% block meta_title %}Listing{% endblock %}
-{% block meta_description %}Listing page{% endblock %}
+{% block meta_title %}{{ listing.title }}{% endblock %}
+{% block meta_description %}{{ listing.description }}{% endblock %}
 {% block meta_image %}{{ listing.photo_main.url }}{% endblock %}
 {% block meta_url %}{% endblock %}
 
 {% block title %}{{ listing.title }}{% endblock %}
 
-{% block other_js %}<script src="{% static 'js/close-and-modal.js' %}" defer></script>{% endblock %}
+{% block other_js %}<script src="{% static 'js/listings.js' %}" defer></script>{% endblock %}
 
 {% block content %}
 
@@ -164,6 +164,110 @@
             </section>
         </section>
     </section>
+    <section class="listings-container">
+        <section class="text-align margin-top-4 margin-bottom-4">
+            <h2>Similar Listings</h2>
+        </section>
+        <ul id="listings-total" class="listings-total similar-listings">
+            {% if similar_listings %}
+                {% for similar_listing in similar_listings %}
+                    {% if similar_listing != listing and similar_listing.make == listing.make %}
+                        <li class="listing box-shadow js-scroll fade-in-bottom" aria-live="polite">
+                            <section class="listing-top">
+                                <div>
+                                    <img src="{{ similar_listing.photo_main.url }}" alt="{{ similar_listing.title }}">
+                                </div>
+                                <section>
+                                    <h3>{{ similar_listing.title }}</h3>
+                                </section>
+                                <div>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <p>{{ similar_listing.address }}<br>{{ similar_listing.city }}, {{ similar_listing.state }} {{ similar_listing.zipcode }}</p>
+                                </div>
+                            </section>
+                            <section class="listing-middle">
+                                <div class="listing-condition">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    <p>Condition: </p>
+                                    <p>{{ similar_listing.condition }}</p>
+                                </div>
+                                <div class="listing-price">
+                                    <i class="fa-solid fa-dollar-sign"></i>
+                                    <p>Price: </p>
+                                    <p>${{ similar_listing.price | intcomma }}</p>
+                                </div>
+                            </section>
+                            <section class="listing-contact">
+                                <div class="listing-employee">
+                                    <i class="fa fa-user"></i>
+                                    <p>{{ similar_listing.employee }}</p>
+                                </div>
+                                <div class="listing-date">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <p>List Date: </p>
+                                    <p>{{ similar_listing.list_date | timesince }}</p>
+                                </div>
+                            </section>
+                            <div class="listing-button text-align">
+                                <a href="{% url 'listing' similar_listing.id %}" target="_blank" class="opacity-5">MORE INFO</a>
+                            </div>
+                        </li>
+                    {% endif %}
+                    {% if similar_listing != listing and similar_listing.body_style == listing.body_style %}
+                        <li class="listing box-shadow js-scroll fade-in-bottom" aria-live="polite">
+                            <section class="listing-top">
+                                <div>
+                                    <img src="{{ similar_listing.photo_main.url }}" alt="{{ similar_listing.title }}">
+                                </div>
+                                <section>
+                                    <h3>{{ similar_listing.title }}</h3>
+                                </section>
+                                <div>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <p>{{ similar_listing.address }}<br>{{ similar_listing.city }}, {{ similar_listing.state }} {{ similar_listing.zipcode }}</p>
+                                </div>
+                            </section>
+                            <section class="listing-middle">
+                                <div class="listing-condition">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    <p>Condition: </p>
+                                    <p>{{ similar_listing.condition }}</p>
+                                </div>
+                                <div class="listing-price">
+                                    <i class="fa-solid fa-dollar-sign"></i>
+                                    <p>Price: </p>
+                                    <p>${{ similar_listing.price | intcomma }}</p>
+                                </div>
+                            </section>
+                            <section class="listing-contact">
+                                <div class="listing-employee">
+                                    <i class="fa fa-user"></i>
+                                    <p>{{ similar_listing.employee }}</p>
+                                </div>
+                                <div class="listing-date">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <p>List Date: </p>
+                                    <p>{{ similar_listing.list_date | timesince }}</p>
+                                </div>
+                            </section>
+                            <div class="listing-button text-align">
+                                <a href="{% url 'listing' similar_listing.id %}" target="_blank" class="opacity-5">MORE INFO</a>
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <div class="text-align margin-bottom-4">
+                    <h3>No Similar Listings Available</h3>
+                </div>
+            {% endif %}
+        </ul>
+    </section>
+    <nav id="nav-listings" class="nav-listings">
+        <button id="prev-btn" class="pag-btn" aria-label="Previous page">&lt;</button>
+        <div id="pag-nums" class="pag-nums"></div>
+        <button id="next-btn" class="pag-btn" aria-label="Next page">&gt;</button>
+    </nav>
 </main>
 
 {% endblock %}

@@ -215,6 +215,11 @@
     font-weight: 700;
 }
 
+.similar-listings {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /*PHOTOS MODAL*/
 
 .listing-photos-modal, .inquiry-modal {

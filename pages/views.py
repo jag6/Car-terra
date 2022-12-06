@@ -3,7 +3,7 @@ from listings.models import Listing
 from employees.models import Employee
 
 def index(request):
-    search_listings = Listing.objects.all().distinct('state')
+    search_listings = Listing.objects.distinct('state')
     newest_listings = Listing.objects.order_by('-list_date').filter(is_published = True)[:3]
     
     context = { 
