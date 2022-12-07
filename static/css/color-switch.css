@@ -164,8 +164,12 @@ main a {
 
 /*SEARCH*/
 
-.search-container button {
-    background: var(--search);
+.search-form-container {
+    background-color: var(--component1-color);
+}
+
+.search-form-container button {
+    background: var(--green);
 }
 
 

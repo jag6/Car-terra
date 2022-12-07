@@ -152,41 +152,6 @@ button {
     max-width: 1440px;
 }
 
-
-
-/*FORMS*/
-
-.user-form {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0 5%;
-    padding-bottom: 2rem;
-    justify-content: center;
-    background-color: #c7c7c7;
-    max-width: 600px;
-    margin-bottom: 4rem;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-
-
-.user-form-btns {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    margin-top: 2rem;
-}
-
-.user-form button, .user-form a {
-    font-size: 24px;
-    line-height: 48px;
-    font-weight: 700;
-}
-
-
-
 /*ANIMATIONS*/
 
 .js-scroll {

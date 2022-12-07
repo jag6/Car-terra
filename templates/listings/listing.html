@@ -3,7 +3,7 @@
 {% load static %}
 {% load humanize %}
 
-{% block canonical %}{% endblock %}
+{% block canonical %}/listing/{{ listing.id }}{% endblock %}
 
 {% block description %}{{ listing.description }}{% endblock %}
 
@@ -14,11 +14,14 @@
 {% block meta_title %}{{ listing.title }}{% endblock %}
 {% block meta_description %}{{ listing.description }}{% endblock %}
 {% block meta_image %}{{ listing.photo_main.url }}{% endblock %}
-{% block meta_url %}{% endblock %}
+{% block meta_url %}/listing/{{ listing.id }}{% endblock %}
 
 {% block title %}{{ listing.title }}{% endblock %}
 
-{% block other_js %}<script src="{% static 'js/listings.js' %}" defer></script>{% endblock %}
+{% block other_js %}
+<script src="{% static 'js/listings.js' %}" defer></script>
+<script src="{% static 'js/listing.js' %}" defer></script>
+{% endblock %}
 
 {% block content %}
 

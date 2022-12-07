@@ -21,53 +21,33 @@
             <section class="margin-bottom-2">
                 <h1>Find Your<br><span class="fade-in-longer">DREAM </span><span>CAR</span></h1>
             </section>
-            <form action="{% url 'search' %}" class="margin-bottom-2">
-                <div class="form-group-column">
-                    <label for="keyword">KEYWORD</label>
-                    <input type="text" name="keyword" id="keyword" placeholder="Keyword (Ford, Porsche, Sedan)">
-                </div>
-                <div class="form-group-column">
-                    <label for="make">MAKE</label>
-                    <input type="text" name="make" id="make" placeholder="Make">
-                </div>
-                <div class="form-group-column">
-                    <label for="model">MODEL</label>
-                    <input type="text" name="model" id="model" placeholder="Model">
-                </div>
-                <div class="form-group-column">
-                    <label for="price_range">PRICE RANGE</label>
-                    <select name="price_range" id="price_range">
-                        <option value="" disabled selected>Price Range</option>
-                        <option value="less-five-g">Less than $5,000</option>
-                        <option value="less-ten-g">Less than $10,000</option>
-                        <option value="less-fifteen-g">Less than $15,000</option>
-                        <option value="less-twenty-g">Less than $20,000</option>
-                        <option value="less-twenty-five-g">Less than $25,000</option>
-                        <option value="less-thirty-five-g">Less than $35,000</option>
-                        <option value="less-fify-g">Less than $50,000</option>
-                        <option value="less-seventy-five-g">Less than $75,000</option>
-                        <option value="more-seventy-five-g">More than $75,000</option>
-                    </select>
-                </div>
-                <div class="form-group-column">
-                    <label for="state">STATE</label>
-                    <select name="state" id="state">
-                        <option value="" disabled selected>State (All)</option>
-                            {% if search_states %}
-                                {% for search_state in search_states %}
-                                    <option value="{{ search_state.state }}">{{ search_state.state }}</option>
-                                {% endfor %}
-                            {% else %}
-                                <option value="No States Available">No States Available</option>
-                            {% endif %}
-                    </select>
-                </div>
-                    <button type="submit" class="green opacity-8">SEARCH</button>
-                </div>
-            </form>
+            {% include 'components/search_form.html' %}
         </section>
     </section>
     {% include 'components/listings_cont.html' %}
+    <section>
+        <section class="text-align margin-top-2 margin-bottom-4 padding-5">
+            <h2>Check Out More</h2>
+        </section>
+        <section class="go-to-container">
+            <section class="go-to-block js-scroll slide-left">
+                <div class="go-to-img">
+                    <img src="{% static 'images/listings-banner.jpg' %}" alt="chevy sports car">
+                </div>
+                <section>
+                    <h3>Browse Listings<br><i class="fa-solid fa-arrow-right"></i><a class="go-to" href="{% url 'listings' %}"> HERE </a><i class="fa-solid fa-arrow-left"></i></h3>
+                </section>
+            </section>
+            <section class="go-to-block js-scroll slide-right">
+                <div class="go-to-img">
+                    <img src="{% static 'images/about-banner.jpg' %}" alt="sales team">
+                </div>
+                <section>
+                    <h3>Our Team<br><i class="fa-solid fa-arrow-right"></i><a class="go-to" href="{% url 'about' %}"> HERE </a><i class="fa-solid fa-arrow-left"></i></h3>
+                </section>
+            </section>
+        </section>
+    </section>
 </main>
 
 {% endblock %}

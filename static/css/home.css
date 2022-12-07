@@ -29,13 +29,13 @@
     display: none;
 }
 
-.banner-form label {
-    visibility: hidden;
-}
-
 .form-group-column {
     display: flex;
     flex-direction: column;
+}
+
+.form-group-column div input, .form-group-column div select {
+    width: 100%;
 }
 
 .banner-form button {
@@ -49,6 +49,40 @@
 
 .bih {
     display: none;
+}
+
+.go-to-container {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.go-to-block {
+    margin: 0 5% 4rem 5%;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.go-to {
+    border-bottom: 8px transparent;
+}
+
+.go-to:hover {
+    border-bottom: 8px solid;
+    transition: .4s ease-in-out;
+}
+
+.border-btm {
+    border-bottom: 2px solid;
+}
+
+.go-to-img img {
+    width: 100%;
+    max-width: 400px;
+    max-height: auto;
+    border-radius: 10px;
 }
 
 @media (width <= 600px) {

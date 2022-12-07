@@ -17,12 +17,19 @@
 
 {% block title %}Search{% endblock %}
 
+{% block other_js %}<script src="{% static 'js/listings.js' %}" defer></script>{% endblock %}
+
 {% block content %}
 
 <main class="main">
-    <section class="text-align margin-top-2 margin-bottom-4">
+    <section class="text-align margin-top-2 margin-bottom-2">
         <h1>Search</h1>
     </section>
+    <section class="search-form-container">
+        {% include 'components/search_form.html' %}
+    </section>
+    {% include 'components/listings_cont.html' %}
+    {% include 'components/listings_cont_nav.html' %}
 </main>
 
 {% endblock %}

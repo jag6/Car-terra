@@ -10,25 +10,26 @@
     <link rel="stylesheet" href="{% static 'css/margin.css' %}">
     <link rel="stylesheet" href="{% static 'css/header-nav-footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <link rel="stylesheet" href="{% static 'css/listings.css' %}">
     <!-- Favicon -->
      <link rel="shortcut icon" href="{% static 'images/car-logo.svg' %}" type="svg">
     <!-- Canonical URL -->
-    <link rel="canonical" href="{% block canonical %}{% endblock %}">
+    <link rel="canonical" href="https://carterra.com{% block canonical %}{% endblock %}">
     <!-- Metadata -->
     <meta name="description" content="{% block description %}Homepage{% endblock %}">
     <meta name="format-detection" content="telephone=no">
     <!-- Twitter Metadata -->
     <meta name="twitter:title" content="{% block twitter_title %}Home{% endblock twitter_title %}">
     <meta name="twitter:description" content="{% block twitter_description %}Home{% endblock %}">
-    <meta name="twitter:image" content="{% block twitter_image %}{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{% static 'images/car-banner.jpg' %}{% endblock %}">
     <meta name="twitter:card" content="summary_large_image">
     <!-- Other Social Media Metadata -->
     <meta property="og:title" content="{% block meta_title %}Home{% endblock %}">
     <meta property="og:description" content="{% block meta_description %}Homepage{% endblock %}">
-    <meta property="og:image" content="{% block meta_image %}{% endblock %}">
-    <meta property="og:url" content="{% block meta_url %}{% endblock %}">
+    <meta property="og:image" content="{% block meta_image %}{% static 'images/car-banner.jpg' %}{% endblock %}">
+    <meta property="og:url" content="https://carterra.com{% block meta_url %}{% endblock %}">
     <meta property="og:site_name" content="Car-terra">
     <!-- Metadata Other -->
     <meta charset="UTF-8">
