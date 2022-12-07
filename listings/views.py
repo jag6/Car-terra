@@ -3,8 +3,11 @@ from . models import Listing
 
 def index(request):
     listings = Listing.objects.order_by('-list_date').filter(is_published = True)
+    listing_cont_title = 'All Listings'
     
-    context = { 'listings': listings }
+    context = { 'listings': listings,
+                'listing_cont_title': listing_cont_title
+               }
     
     return render(request, 'listings/listings.html', context)
     

@@ -1,0 +1,42 @@
+{% load humanize %}
+
+<li class="listing box-shadow js-scroll fade-in-bottom" aria-live="polite">
+    <section class="listing-top">
+        <div>
+            <img src="{{ similar_listing.photo_main.url }}" alt="{{ similar_listing.title }}">
+        </div>
+        <section>
+            <h3>{{ similar_listing.title }}</h3>
+        </section>
+        <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <p>{{ similar_listing.address }}<br>{{ similar_listing.city }}, {{ similar_listing.state }} {{ similar_listing.zipcode }}</p>
+        </div>
+    </section>
+    <section class="listing-middle">
+        <div class="listing-condition">
+            <i class="fa-solid fa-bolt"></i>
+            <p>Condition: </p>
+            <p>{{ similar_listing.condition }}</p>
+        </div>
+        <div class="listing-price">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <p>Price: </p>
+            <p>${{ similar_listing.price | intcomma }}</p>
+        </div>
+    </section>
+    <section class="listing-contact">
+        <div class="listing-employee">
+            <i class="fa fa-user"></i>
+            <p>{{ similar_listing.employee }}</p>
+        </div>
+        <div class="listing-date">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p>List Date: </p>
+            <p>{{ similar_listing.list_date | timesince }}</p>
+        </div>
+    </section>
+    <div class="listing-button text-align">
+        <a href="{% url 'listing' similar_listing.id %}" target="_blank" class="opacity-5">MORE INFO</a>
+    </div>
+</li>

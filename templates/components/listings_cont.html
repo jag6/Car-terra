@@ -1,0 +1,57 @@
+{% load humanize %}
+
+<section class="listings-container">
+    <section id="all-listings" class="text-align margin-top-4 margin-bottom-4">
+        {% block listing_cont_title %}<h2>{{ listing_cont_title }}</h2>{% endblock %}
+    </section>
+    <ul id="listings-total" class="listings-total">
+        {% if listings %}
+            {% for listing in listings %}
+                <li class="listing box-shadow js-scroll fade-in-bottom" aria-live="polite">
+                    <section class="listing-top">
+                        <div>
+                            <img src="{{ listing.photo_main.url }}" alt="{{ listing.title }}">
+                        </div>
+                        <section>
+                            <h3>{{ listing.title }}</h3>
+                        </section>
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>{{ listing.address }}<br>{{ listing.city }}, {{ listing.state }} {{ listing.zipcode }}</p>
+                        </div>
+                    </section>
+                    <section class="listing-middle">
+                        <div class="listing-condition">
+                            <i class="fa-solid fa-bolt"></i>
+                            <p>Condition: </p>
+                            <p>{{ listing.condition }}</p>
+                        </div>
+                        <div class="listing-price">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                            <p>Price: </p>
+                            <p>${{ listing.price | intcomma }}</p>
+                        </div>
+                    </section>
+                    <section class="listing-contact">
+                        <div class="listing-employee">
+                            <i class="fa fa-user"></i>
+                            <p>{{ listing.employee }}</p>
+                        </div>
+                        <div class="listing-date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>List Date: </p>
+                            <p>{{ listing.list_date | timesince }}</p>
+                        </div>
+                    </section>
+                    <div class="listing-button text-align">
+                        <a href="{% url 'listing' listing.id %}" target="_blank" class="opacity-5">MORE INFO</a>
+                    </div>
+                </li>
+            {% endfor %}
+        {% else %}
+            <div class="text-align">
+                <h2>No Listings Available</h2>
+            </div>
+        {% endif %}
+    </ul>
+</section>

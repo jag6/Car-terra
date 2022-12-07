@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% load humanize %}
 
 {% block canonical %}{% endblock %}
 
@@ -29,66 +28,8 @@
         </section>
         <div class="banner-img"><img src="{% static 'images/listings-banner.jpg' %}" alt="chevy sports car"></div>
     </section>
-    <section class="listings-container">
-        <section id="all-listings" class="text-align margin-top-4 margin-bottom-4">
-            <h2>All Listings</h2>
-        </section>
-        <ul id="listings-total" class="listings-total">
-            {% if listings %}
-                {% for listing in listings %}
-                <li class="listing box-shadow js-scroll fade-in-bottom" aria-live="polite">
-                    <section class="listing-top">
-                        <div>
-                            <img src="{{ listing.photo_main.url }}" alt="{{ listing.title }}">
-                        </div>
-                        <section>
-                            <h3>{{ listing.title }}</h3>
-                        </section>
-                        <div>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <p>{{ listing.address }}<br>{{ listing.city }}, {{ listing.state }} {{ listing.zipcode }}</p>
-                        </div>
-                    </section>
-                    <section class="listing-middle">
-                        <div class="listing-condition">
-                            <i class="fa-solid fa-bolt"></i>
-                            <p>Condition: </p>
-                            <p>{{ listing.condition }}</p>
-                        </div>
-                        <div class="listing-price">
-                            <i class="fa-solid fa-dollar-sign"></i>
-                            <p>Price: </p>
-                            <p>${{ listing.price | intcomma }}</p>
-                        </div>
-                    </section>
-                    <section class="listing-contact">
-                        <div class="listing-employee">
-                            <i class="fa fa-user"></i>
-                            <p>{{ listing.employee }}</p>
-                        </div>
-                        <div class="listing-date">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <p>List Date: </p>
-                            <p>{{ listing.list_date | timesince }}</p>
-                        </div>
-                    </section>
-                    <div class="listing-button text-align">
-                        <a href="{% url 'listing' listing.id %}" target="_blank" class="opacity-5">MORE INFO</a>
-                    </div>
-                </li>
-                {% endfor %}
-            {% else %}
-                <div class="text-align">
-                    <h2>No Listings Available</h2>
-                </div>
-            {% endif %}
-        </ul>
-    </section>
-    <nav id="nav-listings" class="nav-listings">
-        <button id="prev-btn" class="pag-btn" aria-label="Previous page">&lt;</button>
-        <div id="pag-nums" class="pag-nums"></div>
-        <button id="next-btn" class="pag-btn" aria-label="Next page">&gt;</button>
-    </nav>
+    {% include 'components/listings_cont.html' %}
+    {% include 'components/listings_cont_nav.html' %}
 </main>
 
 {% endblock %}
