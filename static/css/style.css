@@ -93,20 +93,34 @@ p, label, input, textarea, li, select, option {
 
 label {
     font-weight: 700;
+    text-align: left;
+    margin-bottom: .5rem;
 }
 
 label, input, textarea, select, option {
-    padding: .5rem 5%;
     font-size: 16px;
     line-height: 24px;
     border-radius: 5px;
-    margin-bottom: 1rem;
+}
+
+input, textarea, select, option {
     background-color: #f3f3f3;
     cursor: pointer;
+    padding: .5rem 5%;
+    margin-bottom: 1rem;
 }
 
 button {
     cursor: pointer;
+}
+
+.form-btn button {
+    font-size: 24px;
+    line-height: 48px;
+    font-weight: 700;
+    color: #f3f3f3;
+    width: 100%;
+    border-radius: 5px;
 }
 
 .b {
@@ -233,3 +247,26 @@ button {
       opacity: 1;
     }
   }
+
+
+/*MESSAGES*/
+
+.message {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 1rem auto 2rem auto;
+    justify-content: center;
+    border-radius: 5px;
+    padding: .5rem 5%;
+    font-size: 20px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.message p {
+    text-align: center;
+}
+
+.message p:first-of-type {
+    margin-right: 1rem;
+}

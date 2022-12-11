@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block canonical %}/accounts/register{% endblock %}
+
+{% block description %}Register page{% endblock %}
+
+{% block twitter_title %}Register{% endblock %}
+{% block twitter_description %}Register page{% endblock %}
+{% block twitter_image %}{% static 'images/register-banner.jpg' %}{% endblock %}
+
+{% block meta_title %}Register{% endblock %}
+{% block meta_description %}Register page{% endblock %}
+{% block meta_image %}{% static 'images/register-banner.jpg' %}{% endblock %}
+{% block meta_url %}/Register{% endblock %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<main class="main">
+    <section class="loginreg-form text-align">
+        <section>
+            <h1><i class="fa fa-sign-in"></i></i>REGISTER</h1>
+        </section>
+        {% include 'components/messages.html' %}
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group-column">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name"value="{{ values.first_name }}">
+            </div>
+            <div class="form-group-column">
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name"value="{{ values.last_name }}">
+            </div>
+            <div class="form-group-column">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username"value="{{ values.username }}">
+            </div>
+            <div class="form-group-column">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email"value="{{ values.email }}">
+            </div>
+            <div class="form-group-column">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"value="{{ values.password }}">
+            </div>
+            <div class="form-group-column">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="confirm_password" name="confirm_password" id="confirm_password"value="{{ values.confirm_password }}">
+            </div>
+            <div class="form-btn margin-top-1">
+                <button type="submit" class="green opacity-8">SUBMIT</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+{% endblock %}

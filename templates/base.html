@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <link rel="stylesheet" href="{% static 'css/listings.css' %}">
+    <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
     <!-- Favicon -->
      <link rel="shortcut icon" href="{% static 'images/car-logo.svg' %}" type="svg">
     <!-- Canonical URL -->
@@ -47,44 +48,7 @@
     {% block other_js %}{% endblock %}
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="{% url 'index' %}">
-                <div class="logo">
-                    <img src="{% static 'images/car-logo.svg' %}" alt="logo">
-                    <p>Car-terra</p>         
-                </div>
-            </a>
-            <nav id="nav" class="nav">
-                {% include 'components/nav.html' %}
-            </nav>
-            {% include 'components/nav2.html' %}
-            <div class="color-toggle">
-                <button type="button" class="theme-icon">
-                    <i
-                      aria-hidden="true"
-                      class="fa-solid fa-moon"
-                      title="Toggle between dark and light mode"
-                    ></i>
-                    <i
-                      aria-hidden="true"
-                      class="fa-regular fa-sun"
-                      title="Toggle between dark and light mode"
-                    ></i>
-                    <span class="sr-only">Toggle between dark and light mode</span>
-                </button>
-            </div>
-            <div id="hamburger-icon" class="hamburger-icon">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <div id="nav-overlay" class="nav-overlay">
-                <nav id="mobile-nav" class="mobile-nav">
-                    {% include 'components/nav.html' %}
-                    {% include 'components/nav2.html' %}
-                </nav>
-            </div>
-        </div>
-    </header>
+    {% include 'components/header.html' %}
     {% block content %}
     {% endblock %}
     {% include 'components/footer.html' %}

@@ -8,7 +8,7 @@ const photoModal = document.getElementById('listing-photos-modal');
 
 //open modal
 if(!document.querySelector('.listing-photos-other')) {
-    console.log('no other photos')
+    console.log('no other photos');
 }else {
     const listingPhotos = document.getElementsByClassName('listing-photos-other');
     for (let i = 0; i < listingPhotos.length; i++) {

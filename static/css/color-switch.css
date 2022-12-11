@@ -15,7 +15,7 @@
     --search: #8D8D99;
     --blue: #20658C;
     --green: #1C9984;
-    --red:  ;
+    --red:  #A6373B;
     --yellow: #F2C31F;
     --purple: ;
     --border: 4px solid #0c0c0d;
@@ -39,7 +39,7 @@
     --border: 4px solid #333;
     --blue: #38AEF2;
     --green: #20B399;
-    --red:  ;
+    --red:  #F25055;
     --yellow: #FFCF21;
     --purple: ;
     --box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -157,8 +157,11 @@ main a {
     color: var(--green);
 }
 
+
+/*MESSAGES*/
+
 .error {
-    color: var(--red);
+    background-color: var(--red);
 }
 
 
@@ -168,8 +171,14 @@ main a {
     background-color: var(--component1-color);
 }
 
-.search-form-container button {
-    background: var(--green);
+.form-btn button {
+    background-color: var(--green);
+}
+
+/*ACCOUNTS*/
+.loginreg-form {
+    background-color: var(--component1-color);
+    box-shadow: var(--box-shadow);
 }
 
 
