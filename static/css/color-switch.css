@@ -153,15 +153,16 @@ main a {
     color: var(--font-color);
 }
 
-.success {
-    color: var(--green);
-}
-
 
 /*MESSAGES*/
 
 .error {
     background-color: var(--red);
+}
+
+.success {
+    background-color: var(--yellow);
+    color: var(--font-color);
 }
 
 

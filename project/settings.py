@@ -142,7 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Messages
 MESSAGE_TAGS = {
     messages.ERROR: 'error',
-    
+    messages.SUCCESS: 'success'
 }
 
 

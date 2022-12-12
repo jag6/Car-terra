@@ -1,11 +1,11 @@
 {% if messages %}
     {% for message in messages %}
-        <div id="message" class="message {{ message.tags }}">
+        <div class="message {{ message.tags }}">
             <p>
                 {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
                     Error:
-                {% else %}
-                    {{ message.tags | title }}
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    Success:
                 {% endif %}
             </p>
             <p>{{ message }}</p>
