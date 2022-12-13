@@ -1,13 +1,19 @@
 <div class="user-links" id="user-links">
     <ul>
-        <li>
-            <i class="fa fa-user"></i>
-            <a href="{% url 'login' %}">LOGIN</a>
-        </li>
-        <li>
-            <i class="fa fa-sign-in"></i>
-            <a href="{% url 'register' %}">REGISTER</a>
-        </li>
+        {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'dashboard' %}">DASHBOARD</a>
+            </li>
+        {% else %}
+            <li>
+                <i class="fa fa-user"></i>
+                <a href="{% url 'login' %}">LOGIN</a>
+            </li>
+            <li>
+                <i class="fa fa-sign-in"></i>
+                <a href="{% url 'register' %}">REGISTER</a>
+            </li>
+        {% endif %}
     </ul>
 </div>
 <div class="header-contact-links">

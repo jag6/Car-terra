@@ -60,3 +60,8 @@ class RegisterForm(forms.ModelForm):
             self.add_error('password', 'Password must be at least 8 characters long')
             
         return self.cleaned_data
+    
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField()

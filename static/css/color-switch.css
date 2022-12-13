@@ -1,5 +1,4 @@
 :root:not(.light) {
-    /*BASE*/
     --background-color: #0c0c0d;
     --header-color: #174966;
     --footer-color: #202233;
@@ -50,6 +49,7 @@
     0 100px 80px rgba(0, 0, 0, 0.12);
     --secondary-font-color: rgba(226, 232, 240, 1);
 }
+
 
 /*ADMIN*/
 
@@ -128,6 +128,7 @@ main a {
     background-color: var(--blue);
 }
 
+
 /*LISTING*/
 
 .back-to-listings button {
@@ -141,6 +142,7 @@ main a {
 .make-inquiry-btn button {
     background-color: var(--green);
 }
+
 
 /*BLOG*/
 
@@ -176,10 +178,20 @@ main a {
     background-color: var(--green);
 }
 
+
 /*ACCOUNTS*/
+
 .loginreg-form {
     background-color: var(--component1-color);
     box-shadow: var(--box-shadow);
+}
+
+.logout-btn button {
+    background-color: var(--yellow);
+}
+
+.user-listings table tr:nth-child(even) {
+    background-color: var(--component1-color);
 }
 
 
@@ -212,7 +224,6 @@ main a {
 :root.dark .theme-icon .fa-moon {
     display: inline-block;
 }
-
 
 
 @media (width <= 576px) {

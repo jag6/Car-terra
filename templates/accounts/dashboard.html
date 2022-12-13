@@ -19,9 +19,45 @@
 
 {% block content %}
 
-<main class="main">
-    <section>
-        <h1>DASHBOARD</h1>
+<main class="dashboard">
+    <section class="margin-top-4 margin-bottom-2 text-align padding-5">
+        <h1><i class="fa fa-user"></i>{{ user.username }}'s DB</h1>
+    </section>
+    {% include 'components/messages.html' %}
+    <div class="logout-btn">
+        <form action="{% url 'logout' %}" method="post" id="logout">
+            {% csrf_token %}
+            <button class=" opacity-8" type="submit"><i class="fa fa-sign-in"></i>Logout</button>
+        </form>
+    </div>
+    <section class="user-listings-container">
+        <section>
+            <h2><i class="fa-solid fa-table-list"></i>Your Listings</h2>
+        </section>
+        <section class="user-listings">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Vehicle</th>
+                    <th>View</th>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Viper</td>
+                    <td><a href="">Click</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Camaro</td>
+                    <td><a href="">Click</a></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Civic</td>
+                    <td><a href="">Click</a></td>
+                </tr>
+            </table>
+        </section>
     </section>
 </main>
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from . models import Listing
-from .options import price_options, state_options
+from . options import price_options, state_options
 
 #listings page
 def index(request):
