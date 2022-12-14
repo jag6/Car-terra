@@ -3,18 +3,18 @@
 {% load static %}
 {% load humanize %}
 
-{% block canonical %}/listing/{{ listing.id }}{% endblock %}
+{% block canonical %}{{ url }}{{ listing.id }}{% endblock %}
 
 {% block description %}{{ listing.description }}{% endblock %}
 
 {% block twitter_title %}Listing - {{ listing.title }}{% endblock %}
 {% block twitter_description %}Listing{% endblock %}
-{% block twitter_image %}{% endblock %}
+{% block twitter_image %}{{ listing.photo_main.url }}{% endblock %}
 
 {% block meta_title %}Listing - {{ listing.title }}{% endblock %}
 {% block meta_description %}{{ listing.description }}{% endblock %}
 {% block meta_image %}{{ listing.photo_main.url }}{% endblock %}
-{% block meta_url %}/listing/{{ listing.id }}{% endblock %}
+{% block meta_url %}{{ url }}{{ listing.id }}{% endblock %}
 
 {% block title %}Listing - {{ listing.title }}{% endblock %}
 

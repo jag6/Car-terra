@@ -23,14 +23,28 @@ def register(request):
         return render(request, 'accounts/register.html')
 
 def login(request):
+    title = 'Login'
+    description = 'Login page'
+    image = '/static/images/login-banner.jpg'
+    url = '/accounts/login'
+    
+    form = LoginForm(request.POST)
+    
+    context = { 
+                'title': title,
+                'description': description,
+                'image': image,
+                'url': url,
+                'form': form
+            }
+    
     if request.method == 'POST':
-        form = LoginForm(request.POST)
         if form.is_valid():
             #sanitize form and validate user
             user = auth.authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
             if user is None:
                 messages.error(request, 'Invalid credentials, please try again')
-                return render(request, 'accounts/login.html', { 'form': form })  
+                return render(request, 'accounts/login.html', context)  
             else: 
                 #success message and redirect
                 auth.login(request, user)
@@ -38,10 +52,9 @@ def login(request):
                 return redirect('dashboard')
         else:
             messages.error(request, 'Invalid credentials, please try again')
-            return render(request, 'accounts/login.html', { 'form': form })
+            return render(request, 'accounts/login.html', context)
     else:
-        form = LoginForm(request.POST)
-        return render(request, 'accounts/login.html')
+        return render(request, 'accounts/login.html', context)
 
 def logout(request):
     if request.method == 'POST':
@@ -50,4 +63,16 @@ def logout(request):
         return redirect('login')
 
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+    title = 'Dashboard'
+    description = 'Dashboard page'
+    image = '/static/images/dashboard-banner.jpg'
+    url = '/accounts/dashboard'
+    
+    context = { 
+                'title': title,
+                'description': description,
+                'image': image,
+                'url': url
+            }
+    
+    return render(request, 'accounts/dashboard.html', context)

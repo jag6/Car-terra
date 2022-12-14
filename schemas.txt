@@ -52,3 +52,14 @@ user = User.objects.create_user(first_name = first_name, last_name = last_name, 
 auth.login(request, user)
 messages.success(request, 'You are now logged in')
 return redirect('index')
+
+*headers 
+<IfModule mod_headers.c>
+    Header set Content Security Policy: "default-src 'self'; font-src https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com; img-src 'self'; child-src 'none';"
+
+    Header set Strict-Transport-Security "max-age=31536000; preload" env=HTTPS
+
+    Header set X-Frame-Options: DENY
+
+    Header set X-Content-Type-Options: nosniff
+</IfModule>
