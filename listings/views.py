@@ -4,9 +4,11 @@ from . options import price_options, state_options
 
 #listings page
 def index(request):
+    #listings info
     listings = Listing.objects.order_by('-list_date').filter(is_published = True)
     listing_cont_title = 'All Listings'
     
+    #head tags
     title = 'Listings'
     description = 'Listings page'
     image = '/static/images/listings-banner.jpg'
@@ -25,9 +27,13 @@ def index(request):
 
 #listing page
 def listing(request, listing_id):
+    #listing info
     listing = get_object_or_404(Listing, pk = listing_id)
+    
+    #similar listings info
     similar_listings = Listing.objects.filter(is_published = True)
     
+    #head tag
     url = '/listing/'
     
     context = { 
@@ -40,10 +46,12 @@ def listing(request, listing_id):
 
 #search page
 def search(request):
+    #search info
     queryset_list = Listing.objects.order_by('-price', '-list_date')
     search_states = Listing.objects.distinct('state')
     listing_cont_title = 'Your Results'
     
+    #head tags
     title = 'Search'
     description = 'Search page'
     image = '/static/images/search-banner.jpg'

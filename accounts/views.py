@@ -3,6 +3,7 @@ from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from . forms import RegisterForm, LoginForm
 
+#register page
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -22,7 +23,9 @@ def register(request):
         form = RegisterForm(request.POST) 
         return render(request, 'accounts/register.html')
 
+#login page
 def login(request):
+    #head tags
     title = 'Login'
     description = 'Login page'
     image = '/static/images/login-banner.jpg'
@@ -56,13 +59,16 @@ def login(request):
     else:
         return render(request, 'accounts/login.html', context)
 
+#logout method
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
         messages.success(request, 'Logout Successful')
         return redirect('login')
 
+#user dashboard page
 def dashboard(request):
+    #head tags
     title = 'Dashboard'
     description = 'Dashboard page'
     image = '/static/images/dashboard-banner.jpg'
