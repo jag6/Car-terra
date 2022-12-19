@@ -29,6 +29,7 @@
     <div class="back-to-listings">
         <button id="close-btn" type="button" aria-label="Close">&lt; BACK TO LISTINGS</button>
     </div>
+    {% include 'components/messages.html' %}
     <section class="margin-top-4 margin-bottom-4">
         <h1 class="text-align" >{{ listing.title }}</h1>
     </section>
@@ -159,19 +160,23 @@
                         <h3 class="text-align"><i class="fa-solid fa-share-from-square margin-right-1"></i>Inquiry</h3>
                     </section>
                     {% if user.is_authenticated %}
-                        <form action="" method="post">
+                        {% include 'components/messages.html' %}
+                        <form action="{% url 'inquiry' %}" method="post">
                             {% csrf_token %}
+                            <input type="hidden" name="user" value="{{ user }}">
+                            <input type="hidden" name="employee" value="{{ listing.employee }}">
+                            <input type="hidden" name="listing_id" value="{{ listing.id }}">
                             <div class="form-group-column">
                                 <label for="listing">Listing</label>
-                                <input type="text" name="listing" id="listing" value="{{ listing }}">
+                                <input type="text" name="listing" id="listing" value="{{ listing }}" readonly>
                             </div>
                             <div class="form-group-column">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" value="{{ user.first_name }} {{ user.last_name }}">
+                                <input type="text" name="name" id="name" value="{{ user.first_name }} {{ user.last_name }}" readonly>
                             </div>
                             <div class="form-group-column">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" value="{{ user.email }}">
+                                <input type="email" name="email" id="email" value="{{ user.email }}" readonly>
                             </div>
                             <div class="form-group-column">
                                 <label for="phone">Phone</label>
