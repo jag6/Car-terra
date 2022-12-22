@@ -202,7 +202,7 @@ main a {
     background-color: var(--yellow);
 }
 
-.user-listings table tr:nth-child(even) {
+.user-listings table tbody tr:nth-child(odd) {
     background-color: var(--component1-color);
 }
 

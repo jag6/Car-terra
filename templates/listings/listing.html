@@ -163,8 +163,9 @@
                         {% include 'components/messages.html' %}
                         <form action="{% url 'inquiry' %}" method="post">
                             {% csrf_token %}
+                            <input type="hidden" name="listing_title" value="{{ listing.title }}">
                             <input type="hidden" name="user" value="{{ user }}">
-                            <input type="hidden" name="employee" value="{{ listing.employee }}">
+                            <input type="hidden" name="employee_email" value="{{ listing.employee.email }}">
                             <input type="hidden" name="listing_id" value="{{ listing.id }}">
                             <div class="form-group-column">
                                 <label for="listing">Listing</label>

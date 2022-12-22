@@ -19,30 +19,34 @@
         <section>
             <h2><i class="fa-solid fa-table-list"></i>Your Listings</h2>
         </section>
-        <section class="user-listings">
-            <table>
-                <tr>
-                    <th>#</th>
-                    <th>Vehicle</th>
-                    <th>View</th>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Viper</td>
-                    <td><a href="">Click</a></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Camaro</td>
-                    <td><a href="">Click</a></td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Civic</td>
-                    <td><a href="">Click</a></td>
-                </tr>
-            </table>
-        </section>
+        {% if user_inquiries %}
+            <section class="user-listings">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Vehicle</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user_inquiry in user_inquiries %}
+                            <tr>
+                                <td>{{ user_inquiry.listing.id }}</td>
+                                <td>{{ user_inquiry.listing.title }}</td>
+                                <td>
+                                    <a href="{% url 'listing' user_inquiry.listing.id %}" target="_blank" class="user-listings-hoverline">Click</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        {% else %}
+            <section>
+                <h3 class="text-align">None at present. Explore our listings <a href="{% url 'listings' %}" target="_blank" class="user-listings-hoverline">HERE</a></h3>
+            </section>
+        {% endif %}
     </section>
 </main>
 

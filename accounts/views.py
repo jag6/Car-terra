@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from . forms import RegisterForm, LoginForm
+from inquiries.models import Inquiry
 
 #register page
 def register(request):
@@ -74,11 +75,15 @@ def dashboard(request):
     image = '/static/images/dashboard-banner.jpg'
     url = '/accounts/dashboard'
     
+    #user inquiries
+    user_inquiries = Inquiry.objects.order_by('-inquiry_date').filter(user=request.user)
+    
     context = { 
                 'title': title,
                 'description': description,
                 'image': image,
-                'url': url
+                'url': url,
+                'user_inquiries': user_inquiries
             }
     
     return render(request, 'accounts/dashboard.html', context)

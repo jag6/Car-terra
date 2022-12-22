@@ -63,6 +63,7 @@
 .user-listings table {
     width: 100%;
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
     justify-content: center;
     border-collapse: collapse;
@@ -84,24 +85,24 @@
     font-weight: 700;
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 56px;
 }
 
 .user-listings table td {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 24px;
-    height: 40px;
-    padding: .5rem 0;
+    height: 56px;
+    padding: 1rem 0;
 }
 
-.user-listings table td a {
-    border-bottom: 2px transparent;  
+.user-listings-hoverline  {
+    border-bottom: 4px solid transparent;  
 }
 
-.user-listings table td a:hover {
-    border-bottom: 2px solid;  
-    transition: .3s ease-in-out;
+.user-listings-hoverline:hover {
+    border-bottom: 4px solid;  
+    transition: .4s ease-in-out;
 }
 
 .user-listings table td:nth-child(1), .user-listings table td:nth-child(2) {
