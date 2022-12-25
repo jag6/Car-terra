@@ -2,7 +2,6 @@
 .loginreg-form {
     max-width: 600px;
     margin: 0 auto;
-    margin-top: 2rem;
     margin-bottom: 4rem;
     display: flex;
     justify-content: row;
@@ -21,6 +20,10 @@
 }
 
 /*DASHBOARD*/
+
+.dashboard {
+    margin-top: 128px;
+}
 
 .dashboard i {
     margin-right: 1rem;

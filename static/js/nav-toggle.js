@@ -9,10 +9,10 @@ const clickOff = () => {
 };
 
 document.getElementById('hamburger-icon').addEventListener('click', () => {
-    if(mobile_nav.style.width === '80%') {
+    if(mobile_nav.style.width === '300px') {
         clickOff();
     }else {
-        mobile_nav.style.width = '80%';
+        mobile_nav.style.width = '300px';
         nav_overlay.style.display = 'flex';
         body.style.overflow = 'hidden';
     }
