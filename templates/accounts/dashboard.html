@@ -4,20 +4,19 @@
 
 {% block content %}
 
-<main class="dashboard">
-    <section class="margin-top-4 margin-bottom-2 text-align padding-5">
+    <section class="margin-top-4 margin-bottom-2 text-align padding-5 dashboard">
         <h1><i class="fa fa-user"></i>{{ user.username }}'s DB</h1>
     </section>
     {% include 'components/messages.html' %}
     <div class="logout-btn">
         <form action="{% url 'logout' %}" method="post" id="logout">
             {% csrf_token %}
-            <button class=" opacity-8" type="submit"><i class="fa fa-sign-in"></i>Logout</button>
+            <button class=" opacity-8" type="submit"><i class="fa fa-sign-in margin-right-1"></i>Logout</button>
         </form>
     </div>
     <section class="user-listings-container">
         <section>
-            <h2><i class="fa-solid fa-table-list"></i>Your Listings</h2>
+            <h2><i class="fa-solid fa-table-list margin-right-1"></i>Your Listings</h2>
         </section>
         {% if user_inquiries %}
             <section class="user-listings">
@@ -48,6 +47,5 @@
             </section>
         {% endif %}
     </section>
-</main>
 
 {% endblock %}

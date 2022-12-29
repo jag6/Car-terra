@@ -6,10 +6,6 @@
     text-align: center;
 }
 
-.bia {
-    top: 240px;
-}
-
 .employee-container, .mvp-section {
     padding: 0 5%;
 }
@@ -19,6 +15,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
     margin-bottom: 4rem;
 }
 
@@ -118,11 +116,5 @@
 
     .employee-img {
         margin-bottom: 2rem;
-    }
-}
-
-@media (width <= 576px) {
-    .bia {
-        top: 176px;
     }
 }

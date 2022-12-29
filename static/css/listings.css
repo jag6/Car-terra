@@ -1,5 +1,8 @@
 .bil {
-    top: 160px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
 .listings-container {
@@ -10,6 +13,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .listing {
@@ -101,6 +106,7 @@
     margin-left: 2%;
     margin: 0 auto;
     padding-left: 2%;
+    padding-top: 2rem;
     display: flex;    
 }
 
@@ -392,10 +398,6 @@
 }
 
 @media (width <= 576px) {
-    .bil {
-        top: 176px;
-    }
-
     .listing, .make-inquiry  {
         padding: 1rem 5%;
     }
