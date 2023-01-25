@@ -1,0 +1,67 @@
+.contact-container {
+    max-width: 1440px;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 4rem auto;
+}
+
+.contact-container p:first-of-type {
+    font-size: 32px;
+    line-height: 64px;
+    font-weight: 700;
+}
+
+.contact-container ul {
+    display: flex;
+    flex-flow: row wrap;
+    margin:  0 auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-container ul li {
+    list-style: none;
+    display: flex;
+    margin: 0 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 144px;
+}
+
+.contact-container ul li a i {
+    margin: 2rem;
+    font-size: 64px;
+    line-height: 64px;
+}
+
+.contact-container ul li a i:hover {
+    transform: scale(1.1);
+    transition: .5s ease-in-out;
+}
+
+.contact-container ul li:nth-child(1) i {
+    color: #25d366;
+} 
+
+.contact-container ul li:nth-child(2) i {
+    color: #ff0000;
+} 
+
+.contact-container ul li:nth-child(3) i {
+    color: #c32aa3;
+} 
+
+.contact-container ul li:nth-child(4) i {
+    color: #0a66c2;
+} 
+
+.contact-container ul li:nth-child(5) i {
+    color: #666;
+} 
+
+.contact-container ul li:nth-child(6) i {
+    color: #aaa;
+} 

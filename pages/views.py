@@ -12,7 +12,7 @@ def index(request):
     
     #head tags
     title = 'Home'
-    description = 'Homepage'
+    description = 'Looking for a quality pre-owned vehicle? Then you\'ve come to the right place, because we at Car-terra make customer satisfaction our #1 priority.'
     image = '/static/images/car-banner.jpg'
     
     context = { 
@@ -36,7 +36,7 @@ def about(request):
     
     #head tags
     title = 'About'
-    description = 'About page'
+    description = 'Meet the dream team behind your favorite car listings company.'
     image = '/static/images/about-banner.jpg'
     url = '/about'
     
@@ -50,3 +50,21 @@ def about(request):
                 }
     
     return render(request, 'pages/about.html', context)
+
+#contact page
+def contact(request):
+    #head tags
+    title = 'Contact'
+    description = 'Feel free to contact us at any time. We eagerly await the opportunity to help you find the car of your dreams.'
+    image = '/static/images/contact-banner.jpg'
+    url = '/contact'
+    
+    context = {
+                'title': title,
+                'description': description,
+                'image': image,
+                'url': url
+                }
+    
+    
+    return render(request, 'pages/contact.html', context)

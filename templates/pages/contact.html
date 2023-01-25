@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="banner">
+    <section class="bi bil">
+        <h1 class="fade-in-no-scroll">DROP US A LINE</h1>
+    </section>
+    <div class="banner-img"><img src="{% static 'images/contact-banner.jpg' %}" alt="woman sending a text message"></div>
+</section>
+<section class="contact-container">
+    <div class="text-align margin-bottom-4">
+        <p>Feel free to contact us at any time<br>We eagerly await the opportunity to help you find the car of your dreams</p>
+    </div>
+    <ul>
+        <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
+        <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href=""><i class="fa-solid fa-mobile-screen"></i></a></li>
+        <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
+    </ul>
+</section>
+
+{% endblock %}

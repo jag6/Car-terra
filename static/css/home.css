@@ -60,7 +60,12 @@
     border-bottom: 8px transparent;
 }
 
-.go-to:hover {
+.go-to span {
+    border-bottom: 8px transparent solid;
+    margin: 0 .5rem;
+}
+
+.go-to span:hover {
     border-bottom: 8px solid;
     transition: .4s ease-in-out;
 }
