@@ -11,8 +11,13 @@ def index(request):
     #head tags
     title = 'Listings'
     description = 'Listings page'
-    image = '/static/images/listings-banner.jpg'
+    image = 'listings-banner.webp'
     url = '/listings'
+    
+    #banner
+    banner_title = 'BROWSE OUR LISTINGS'
+    banner_img = 'listings-banner.webp'
+    banner_img_description = 'Chevy Camaro'
     
     context = { 
                 'listings': listings,
@@ -20,7 +25,10 @@ def index(request):
                 'title': title,
                 'description': description,
                 'image': image,
-                'url': url
+                'url': url,
+                'banner_title': banner_title,
+                'banner_img': banner_img,
+                'banner_img_description': banner_img_description
                 }
     
     return render(request, 'listings/listings.html', context)
@@ -54,7 +62,7 @@ def search(request):
     #head tags
     title = 'Search'
     description = 'Search page'
-    image = '/static/images/search-banner.jpg'
+    image = 'search-banner.webp'
     url = '/search'
     
     #keyword

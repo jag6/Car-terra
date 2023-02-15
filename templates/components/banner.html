@@ -1,0 +1,8 @@
+{% load static %}
+
+<section class="banner">
+    <section class="bi bil">
+        <h1 class="fade-in-no-scroll">{{ banner_title }}</h1>
+    </section>
+    <div class="banner-img"><img src="{% static 'images/' %}{{ banner_img }}" alt="{{ banner_img_description }}"></div>
+</section>

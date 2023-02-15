@@ -14,7 +14,7 @@
                     <i class="fa-solid fa-arrow-down"></i>
                 </div>
             </section>
-            <img src="{% static 'images/car-banner.jpg' %}" alt="car interior">
+            <img src="{% static 'images/' %}{{ banner_img }}" alt="car interior">
         </div>
         <section class="banner-form">
             <section class="margin-bottom-2">
@@ -31,7 +31,7 @@
         <section class="go-to-container">
             <section class="go-to-block js-scroll slide-left">
                 <div class="go-to-img">
-                    <img src="{% static 'images/listings-banner.jpg' %}" alt="chevy sports car">
+                    <img src="{% static 'images/listings-banner.webp' %}" alt="chevy sports car">
                 </div>
                 <section>
                     <h3><a class="go-to" href="{% url 'listings' %}">Browse Listings<br><i class="fa-solid fa-arrow-right"></i><span>HERE</span></a><i class="fa-solid fa-arrow-left"></i></h3>
@@ -39,7 +39,7 @@
             </section>
             <section class="go-to-block js-scroll slide-right">
                 <div class="go-to-img">
-                    <img src="{% static 'images/about-banner.jpg' %}" alt="sales team">
+                    <img src="{% static 'images/about-banner.webp' %}" alt="sales team">
                 </div>
                 <section>
                     <h3><a class="go-to" href="{% url 'about' %}">Our Team<br><i class="fa-solid fa-arrow-right"></i><span>HERE</span></a><i class="fa-solid fa-arrow-left"></i></h3>

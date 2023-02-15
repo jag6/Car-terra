@@ -29,7 +29,7 @@ def login(request):
     #head tags
     title = 'Login'
     description = 'Login page'
-    image = '/static/images/login-banner.jpg'
+    image = 'login-banner.webp'
     url = '/accounts/login'
     
     form = LoginForm(request.POST)
@@ -72,7 +72,7 @@ def dashboard(request):
     #head tags
     title = 'Dashboard'
     description = 'Dashboard page'
-    image = '/static/images/dashboard-banner.jpg'
+    image = 'dashboard-banner.webp'
     url = '/accounts/dashboard'
     
     #user inquiries

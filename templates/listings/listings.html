@@ -5,13 +5,7 @@
 {% block other_js %}<script src="{% static 'js/listings.js' %}" defer></script>{% endblock %}
 
 {% block content %}
-
-    <section class="banner">
-        <section class="bi bil">
-            <h1 class="fade-in-no-scroll">BROWSE OUR LISTINGS</h1>
-        </section>
-        <div class="banner-img"><img src="{% static 'images/listings-banner.jpg' %}" alt="chevy sports car"></div>
-    </section>
+    {% include 'components/banner.html' %}
     {% include 'components/listings_cont.html' %}
     {% include 'components/listings_cont_nav.html' %}
 

@@ -13,7 +13,10 @@ def index(request):
     #head tags
     title = 'Home'
     description = 'Looking for a quality pre-owned vehicle? Then you\'ve come to the right place, because we at Car-terra make customer satisfaction our #1 priority.'
-    image = '/static/images/car-banner.jpg'
+    image = 'car-banner.webp'
+    
+    #banner
+    banner_img = 'car-banner.webp'
     
     context = { 
                 'search_states': search_states,
@@ -24,6 +27,7 @@ def index(request):
                 'title': title,
                 'description': description,
                 'image': image,
+                'banner_img': banner_img
                 }
     
     return render(request, 'pages/index.html', context)
@@ -37,8 +41,13 @@ def about(request):
     #head tags
     title = 'About'
     description = 'Meet the dream team behind your favorite car listings company.'
-    image = '/static/images/about-banner.jpg'
+    image = 'about-banner.webp'
     url = '/about'
+    
+    #banner
+    banner_title = 'MEET THE DREAM TEAM'
+    banner_img = 'about-banner.webp'
+    banner_img_description = 'Car-terra sales team'
     
     context = { 
                 'employees': employees,
@@ -46,7 +55,10 @@ def about(request):
                 'title': title,
                 'description': description,
                 'image': image,
-                'url': url
+                'url': url,
+                'banner_title': banner_title,
+                'banner_img': banner_img,
+                'banner_img_description': banner_img_description
                 }
     
     return render(request, 'pages/about.html', context)
@@ -56,15 +68,22 @@ def contact(request):
     #head tags
     title = 'Contact'
     description = 'Feel free to contact us at any time. We eagerly await the opportunity to help you find the car of your dreams.'
-    image = '/static/images/contact-banner.jpg'
+    image = 'contact-banner.webp'
     url = '/contact'
+    
+    #banner
+    banner_title = 'DROP US A LINE'
+    banner_img = 'contact-banner.webp'
+    banner_img_description = 'woman sending a text message'
     
     context = {
                 'title': title,
                 'description': description,
                 'image': image,
-                'url': url
+                'url': url,
+                'banner_title': banner_title,
+                'banner_img': banner_img,
+                'banner_img_description': banner_img_description
                 }
-    
     
     return render(request, 'pages/contact.html', context)

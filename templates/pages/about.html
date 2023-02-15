@@ -4,12 +4,7 @@
 
 {% block content %}
 
-    <section class="banner">
-        <section class="bi bil">
-            <h1 class="fade-in-no-scroll">MEET THE DREAM TEAM</h1>
-        </section>
-        <div class="banner-img"><img src="{% static 'images/about-banner.jpg' %}" alt="sales team"></div>
-    </section>
+    {% include 'components/banner.html' %}
     <ul class="employee-container">
         <section class="text-align margin-top-4 margin-bottom-4">
             <h2>A Little About Us</h2>

@@ -3,6 +3,8 @@
 {% load static %}
 {% load humanize %}
 
+{% block title %}Listing - {{ listing.title }}{% endblock %}
+
 {% block canonical %}{{ url }}{{ listing.id }}{% endblock %}
 
 {% block description %}{{ listing.description }}{% endblock %}
@@ -15,8 +17,6 @@
 {% block meta_description %}{{ listing.description }}{% endblock %}
 {% block meta_image %}{{ listing.photo_main.url }}{% endblock %}
 {% block meta_url %}{{ url }}{{ listing.id }}{% endblock %}
-
-{% block title %}Listing - {{ listing.title }}{% endblock %}
 
 {% block other_js %}
 <script src="{% static 'js/listings.js' %}" defer></script>
