@@ -1,7 +1,7 @@
 # Car-terra
 
 ## Description
-This is a web application where potential buyers can search, view, and inquiry about vehicles. 
+This is a web application where potential buyers can search, view, and inquire about vehicles. 
 
 ## Features
 - Dark Mode
