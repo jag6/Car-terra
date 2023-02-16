@@ -11,11 +11,11 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
-/media
+#/media
 
 /venv
 venv
 
 .env
 
-/static/images
+#/static/images
