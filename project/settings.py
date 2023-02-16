@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 '''
 import os
 from pathlib import Path
-from decouple import config
+from decouple import config, Csv
 from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +28,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast = bool)
 
-ALLOWED_HOSTS = [config('HOST')]
+ALLOWED_HOSTS = config('HOSTS', default=[], cast=Csv())
+
 
 
 # Application definition
