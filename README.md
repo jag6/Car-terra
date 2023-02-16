@@ -14,7 +14,7 @@ This is a web application where potential buyers can search, view, and inquire a
   - Employees
      - Make Employee(s) Employee of the Month
   - Listings
-    - Make Listing available or unavailable without deleting it
+    - Toogle on/off Listing availability
   - Inquiries
  
 ### User Privileges
