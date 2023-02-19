@@ -10,23 +10,23 @@
      <title>{% block title %}{{ title }} - Car-terra{% endblock %}</title>
      {% if banner_img %}
          <!-- Preload -->
-         <link rel="preload" href="{% static 'images/' %}{{ banner_img }}" as="image">
+         <link rel="preload" href="https://carterrarfw.online/static/images/{{ banner_img }}" as="image">
      {% endif %}
     <!-- CSS + Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/color-switch.css' %}">
-    <link rel="stylesheet" href="{% static 'css/margin.css' %}">
-    <link rel="stylesheet" href="{% static 'css/header-nav-footer.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/search.css' %}">
-    <link rel="stylesheet" href="{% static 'css/about.css' %}">
-    <link rel="stylesheet" href="{% static 'css/listings.css' %}">
-    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
-    <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/style.css">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/color-switch.css">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/margin.css">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/header-nav-footer.css">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/home.css">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/search.css">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/about.css">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/listings.css">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/contact.css">
+    <link rel="stylesheet" href="https://carterrarfw.online/static/accounts.css">
     <!-- Favicon -->
-     <link rel="shortcut icon" href="{% static 'images/car-logo.svg' %}" type="svg">
+     <link rel="shortcut icon" href="https://carterrarfw.online/static/images/car-logo.svg" type="svg">
     <!-- Canonical URL -->
     <link rel="canonical" href="https://carterrarfw.online{% block canonical %}{{ url }}{% endblock %}">
     <!-- Metadata -->
@@ -35,12 +35,12 @@
     <!-- Twitter Metadata -->
     <meta name="twitter:title" content="{% block twitter_title %}{{ title }}{% endblock twitter_title %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ description }}{% endblock %}">
-    <meta name="twitter:image" content="{% static 'images/' %}{% block twitter_image %}{{ image }}{% endblock %}">
+    <meta name="twitter:image" content="https://carterrarfw.online/static/images/{% block twitter_image %}{{ image }}{% endblock %}">
     <meta name="twitter:card" content="summary_large_image">
     <!-- Other Social Media Metadata -->
     <meta property="og:title" content="{% block meta_title %}{{ title }}{% endblock %}">
     <meta property="og:description" content="{% block meta_description %}{{ description }}{% endblock %}">
-    <meta property="og:image" content="{% static 'images/' %}{% block meta_image %}{{ image }}{% endblock %}">
+    <meta property="og:image" content="https://carterrarfw.online/static/images/{% block meta_image %}{{ image }}{% endblock %}">
     <meta property="og:url" content="https://carterra.online{% block meta_url %}{{ url }}{% endblock %}">
     <meta property="og:site_name" content="Car-terra">
     <!--Scripts -->
