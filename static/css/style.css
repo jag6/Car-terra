@@ -158,7 +158,7 @@ button {
     height: auto;
 }
 
-@media(width <=1440px) {
+@media only screen and (max-width: 1440px) {
     .banner-img {
         height: 672px;
         max-width: 1440px;

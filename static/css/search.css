@@ -30,7 +30,7 @@
     margin-right: .5rem;
 }
 
-@media (width <= 800px) {
+@media only screen and (width: 800px) {
     .search-form-container {
         max-width: 600px;
         padding: 2rem 5% 0 5%;

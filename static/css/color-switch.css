@@ -237,16 +237,13 @@ main a {
     display: inline-block;
 }
 
-
-@media (width <= 576px) {
-    .banner-form {
-        background-color: var(--banner-form);
-    }
+.banner-form {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); 
 }
 
-@media (width > 576px) {
+@media only screen and (max-width: 576px) {
     .banner-form {
-        background: rgb(0, 0, 0);
-        background: rgba(0, 0, 0, 0.5); 
+        background-color: var(--banner-form);
     }
 }
