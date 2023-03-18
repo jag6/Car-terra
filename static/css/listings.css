@@ -378,7 +378,7 @@
 }
 
 
-@media (width <= 1099px) {
+@media only screen and (max-width: 1099px) {
     .close-modal {
         top: 88px;
     }
@@ -397,7 +397,7 @@
     }
 }
 
-@media (width <= 576px) {
+@media only screen and (max-width: 576px) {
     .listing, .make-inquiry  {
         padding: 1rem 5%;
     }
