@@ -116,8 +116,9 @@ header i {
     z-index: 1000;
     top: 56px;
     left: 0;
+    bottom: 0;
+    overflow-y: scroll;
     width: 100%;
-    height: 100%;
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.5);  
 }
@@ -212,30 +213,6 @@ header i {
         right: 120px;
     }
 } 
-
-@media only screen and (max-width: 1000px) and (orientation: landscape) {
-    .mobile-nav {
-        padding: 1rem 0 0 5%;
-    }
-
-    .mobile-nav ul li a {
-        font-size: 18px;
-        line-height: 48px;
-    }
-
-    .mobile-nav .user-links {
-        margin-top: 0;
-    }
-
-    .mobile-nav .header-contact-links {
-        margin: 1rem 0 0 1rem;
-    }
-
-    .mobile-nav .header-contact-links i {
-        font-size: 18px;
-        line-height: 32px;
-    }
-}
 
 @media only screen and (max-width: 1099px) and (orientation: portrait) {
     .nav, .user-links, .header-contact-links {
