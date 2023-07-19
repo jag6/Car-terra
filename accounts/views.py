@@ -17,7 +17,6 @@ def register(request):
                 'description': description,
                 'image': image,
                 'url': url,
-                'form': form
             }
     
     if request.method == 'POST':
