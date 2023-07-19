@@ -6,19 +6,6 @@ from inquiries.models import Inquiry
 
 #register page
 def register(request):
-    #head tags
-    title = 'Register'
-    description = 'Register page'
-    image = 'register-banner.webp'
-    url = '/accounts/register'
-        
-    context = { 
-                'title': title,
-                'description': description,
-                'image': image,
-                'url': url,
-            }
-    
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
@@ -31,11 +18,11 @@ def register(request):
         else:
             #output any errors
             form.errors
-            return render(request, 'accounts/register.html', context, { 'form': form })
+            return render(request, 'accounts/register.html', { 'form': form })
             
     else: 
         form = RegisterForm(request.POST) 
-        return render(request, 'accounts/register.html', context)
+        return render(request, 'accounts/register.html')
 
 #login page
 def login(request):
